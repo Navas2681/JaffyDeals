@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JaffyDeals - Best Daily Deals</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="top-nav">
+    <a href="#">Home</a>
+    <a href="#">Deals</a>
+    <a href="#">Coupons</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <img src="assets/jaffy_trans_mobile.png" class="header_logo" alt="JaffyDeals Logo">
+
+  <div class="search-box">
+    <input type="text" placeholder="Search for Products">
+  </div>
+</header>
+
+<div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="electronics">Electronics</button>
+    <button class="filter-btn" data-filter="fashion">Fashion</button>
+    <button class="filter-btn" data-filter="grocery">Grocery</button>
+    <button class="filter-btn" data-filter="beauty">Beauty</button>
+    <button class="filter-btn" data-filter="home">Home</button>
+</div>
+
+<section class="deals-grid">
+    <!-- PRODUCTS WILL BE LOADED HERE FROM JSON -->
+    <div id="products"></div>
+</section>
+
+<footer>
+    © 2025 JaffyDeals
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
