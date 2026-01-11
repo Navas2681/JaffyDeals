@@ -1,7 +1,11 @@
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
-    let container = document.getElementById("products");
+  
+  // newest items first
+  products = products.reverse();
+
+  let container = document.getElementById("products");
 
     container.innerHTML = products.map(p => `
       <div class="deal-card" data-category="${p.category}">
