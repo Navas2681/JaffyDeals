@@ -147,8 +147,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 20px;
-  gap: 4px;
+  justify-content: center;
+  padding: 15px 0px;
   background: white;
 }
 
@@ -170,15 +170,17 @@ header {
   width: 200px;
   height: auto;
   object-fit: contain;
-  margin: 0;
+  margin-bottom: 4px;
 }
 
 /* SEARCH BAR */
 .search-box {
   width: 90%;
   max-width: 550px;
-  margin-top: 6px;
-  margin-bottom: 12px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-box input {
@@ -193,15 +195,118 @@ header {
 }
 
 @media (max-width: 768px) {
-  .header_logo {
-    width: 270px;
-  }
-
+    .header_logo{
+        width: 240px
+    }
+}
   .top-nav {
     font-size: 0.8rem;
     gap: 10px;
   }
+
+  /* TOGGLE BUTTON STYLE */
+.theme-btn {
+  background: #e6b800;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
 }
+
+/* DARK MODE */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Header in dark */
+.dark-mode header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+/* Nav links */
+.dark-mode .top-nav a {
+  color: #e0e0e0;
+}
+
+/* Search bar */
+.dark-mode .search-box input {
+  background: #222;
+  border-color: #555;
+  color: #eee;
+}
+
+/* Product card */
+.dark-mode .deal-card {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+/* Footer */
+.dark-mode footer {
+  background: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+.dark-mode .rating-number {
+  color: #fff;  /* make visible on dark */
+  opacity: 0.9;
+}
+
+.dark-mode .rating span {
+  color: #ffd54f;
+}
+
+/* Floating Dark Mode Toggle */
+.toggle-btn {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+}
+
+/* Hover effect (desktop) */
+.toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Light mode appearance */
+body:not(.dark-mode) .toggle-btn {
+    background: #ffb400;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+  .toggle-btn {
+    bottom: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+}
+
+.toggle-btn {
+  z-index: 9999;
+}
+
 
 
 

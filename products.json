@@ -24,7 +24,7 @@
     "price": "₹5799..",
     "mrp": "₹8,299",
     "discount": "In stock",
-    "category": "electronics",
+    "category": "mobile",
     "image": "https://m.media-amazon.com/images/I/41lNT+pCqQL._SY300_SX300_QL70_ML2_.jpg",
     "link": "https://amzn.to/4qOh3oH",
     "rating": 4.1
@@ -34,7 +34,7 @@
     "price": "₹14,999",
     "mrp": "₹16,999",
     "discount": "12% OFF",
-    "category": "electronics",
+    "category": "mobile",
     "image": "https://m.media-amazon.com/images/I/61Vb6GsQgrL._SX679_.jpg",
     "link": "https://amzn.to/49nvla1",
     "rating": 4.1
@@ -191,16 +191,5 @@
     "image": "https://m.media-amazon.com/images/I/51A5uI49kCL._SL1000_.jpg",
     "link": "https://amzn.to/4qLe1RZ",
     "rating": 4.2
-  },
-
-  {
-    "name": "3D Bow Design Case Cover for iPhone Adapter Compatible with 18W and 20W Charger Only 360° Full Protection Silicone Case Cover 5 in 1. (Pink Bow)",
-    "price": "₹169",
-    "mrp": "₹499",
-    "discount": "%66",
-    "category": "electronics",
-    "image": "https://m.media-amazon.com/images/I/515jrJdjDlL.jpg",
-    "link": "https://amzn.to/49NoSoG",
-    "rating": 3.9
   }
 ]

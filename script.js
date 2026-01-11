@@ -67,3 +67,25 @@ function generateStars(rating) {
 
   return stars;
 }
+
+const toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  toggle.textContent = document.body.classList.contains("dark-mode")
+    ? "☀️"
+    : "🌙";
+});
+
+// Save theme preference
+toggle.addEventListener("click", () => {
+  const isDark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// Load theme on startup
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
