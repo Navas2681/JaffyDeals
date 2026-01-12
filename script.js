@@ -8,27 +8,32 @@ fetch("products.json")
   let container = document.getElementById("products");
 
     container.innerHTML = products.map(p => `
-      <div class="deal-card" data-category="${p.category}">
-        <img src="${p.image}" class="product-img">
-        <h2>${p.name}</h2>
+  <div class="deal-card"
+    data-category="${p.category}"
+    data-name="${p.name.toLowerCase()}"
+    data-keywords="${(p.keywords || '').toLowerCase()}">
 
-        <!-- ⭐ RATING ADDED -->
-        ${p.rating ? `
-        <div class="rating">
-          ${generateStars(p.rating)}
-          <span class="rating-number">${p.rating}</span>
-        </div>
-        ` : ''}
+    <img src="${p.image}" class="product-img" alt="${p.name}">
 
-        <p class="price">
-            <span class="new">${p.price}</span>
-            <span class="old">${p.mrp}</span>
-            <span class="off">${p.discount}</span>
-        </p>
-        <p class="store">Amazon</p>
-        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-      </div>
-    `).join("");
+    <h2>${p.name}</h2>
+
+    ${p.rating ? `
+    <div class="rating">
+      ${generateStars(p.rating)}
+      <span class="rating-number">${p.rating}</span>
+    </div>
+    ` : ''}
+
+    <p class="price">
+      <span class="new">${p.price}</span>
+      <span class="old">${p.mrp}</span>
+      <span class="off">${p.discount}</span>
+    </p>
+
+    <p class="store">Amazon</p>
+    <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+  </div>
+`).join('');
 
     setupFilters();
   });
@@ -93,3 +98,22 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   document.body.classList.add("dark-mode");
 }
+
+const searchInput = document.querySelector('.search-box input');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll('.deal-card');
+
+  cards.forEach(card => {
+    const name = card.getAttribute('data-name');
+    const category = card.getAttribute('data-category');
+    const keywords = card.getAttribute('data-keywords') || '';
+
+    if (name.includes(q) || category.includes(q) || keywords.includes(q)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});

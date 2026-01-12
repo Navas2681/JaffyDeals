@@ -7,7 +7,8 @@
     "category": "electronics",
     "image": "https://m.media-amazon.com/images/I/41VFJcUHTvL._SY300_SX300_QL70_ML2_.jpg",
     "link": "https://amzn.to/49d4j4X",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "boat Rockerz headphones bluetooth wireless audio headset"
   },
   {
     "name": "boAt Rockerz 558",
@@ -17,7 +18,8 @@
     "category": "electronics",
     "image": "https://m.media-amazon.com/images/I/61L4SkS7w2L._SX522_.jpg",
     "link": "https://amzn.to/3Z92WhC",
-    "rating": 4.0
+    "rating": 4.0,
+    "keywords": "boat Rockerz headphones bluetooth wireless audio headset"
   },
   {
     "name": "Zeno 20 Max",
@@ -27,7 +29,8 @@
     "category": "mobile",
     "image": "https://m.media-amazon.com/images/I/41lNT+pCqQL._SY300_SX300_QL70_ML2_.jpg",
     "link": "https://amzn.to/4qOh3oH",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "5g smartphone android mobile big battery fast charging hd display gaming phone zeno"
   },
   {
     "name": "iQOO Z10 Lite 5G",
@@ -37,28 +40,31 @@
     "category": "mobile",
     "image": "https://m.media-amazon.com/images/I/61Vb6GsQgrL._SX679_.jpg",
     "link": "https://amzn.to/49nvla1",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "iqoo 5g mobile smartphone gaming phone fast charging high performance hd display"
   },
   {
-    "name": "Bacca Bucci Men",
+    "name": "Bacca Bucci Men Lace Up Basketball Shoe",
     "price": "₹1,499",
     "mrp": "₹3,499",
     "discount": "57% OFF",
     "category": "fashion",
     "image": "https://m.media-amazon.com/images/I/812shEnuYgL._SY625_.jpg",
     "link": "https://amzn.to/3Z93iEY",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "men shoes sneakers sports basketball runnig breathable lightwight lace up footwear"
   },
   
   {
-    "name": "Fire-Bolttn",
+    "name": "Fire-Boltt Talk Round Smart Watch 1.39″ TFT Display with Bluetooth Calling, Dual Button, Voice Assistance, SPO₂ & Heart Rate Monitor, 120+ Sports Modes, Metal Smartwatch for Men & Women - Silver",
     "price": "₹1,199",
     "mrp": "₹14,999",
     "discount": "92% OFF",
     "category": "fashion",
     "image": "https://m.media-amazon.com/images/I/71uRJs56VAL._SX679_.jpg",
     "link": "https://amzn.to/4bq4BH4",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "smartwatch fitness tracker bluetooth calling sports watch heath monitor stylish wearable"
   },
 
 {
@@ -69,7 +75,8 @@
     "category": "electronics",
     "image": "https://m.media-amazon.com/images/I/61VRH0jQrRL._SL1500_.jpg",
     "link": "https://amzn.to/4bq4BH4",
-    "rating": 4.0
+    "rating": 4.0,
+    "keywords": "beard trimmer men grooming shaving reachargeable battery trimeer skin protect philips"
   },
 
 {
@@ -80,7 +87,8 @@
     "category": "electronics",
     "image": "https://m.media-amazon.com/images/I/71DFol2sNKL._SL1500_.jpg",
     "link": "https://amzn.to/3NlcN1i",
-    "rating": 4.2
+    "rating": 4.2,
+    "keywords": "oneblade shaver trimmer hybrid men grooming face shave edging philips rechargeable"
   },
 
   {
@@ -91,7 +99,8 @@
     "category": "electronics",
     "image": "https://m.media-amazon.com/images/I/71gGEv0HIpL._SL1500_.jpg",
     "link": "https://amzn.to/4546rcK",
-    "rating": 4.3
+    "rating": 4.3,
+    "keywords": "body trimmer men pubic ball shaver private groomig waterproof rechargeable trimmer"
   },
 
   {
@@ -102,7 +111,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/71Drb+lWlfL._SL1500_.jpg",
     "link": "https://amzn.to/4pwgAGs",
-    "rating": 4.4
+    "rating": 4.4,
+    "keywords": "lays chips snacks potato wafers food salty snack grocery munchies"
   },
 
   {
@@ -113,7 +123,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/611He7K9cBL._SL1500_.jpg",
     "link": "https://amzn.to/4jyOOIb",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "pringles chips snacks potato wafers sour cream onion masala pringles combo grocery party"
   },
 
   {
@@ -124,7 +135,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/81ZxhQcqA8L._SL1500_.jpg",
     "link": "https://amzn.to/4pJ9G0U",
-    "rating": 4.4
+    "rating": 4.4,
+    "keywords": "chocos cereal kids breakfast chocolate flakes healthy whole gain kalloggs milk snack"
   },
 
   {
@@ -135,7 +147,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/61J60jF4XgL._SL1024_.jpg",
     "link": "https://amzn.to/4aOP03F",
-    "rating": 3.4
+    "rating": 3.4,
+    "keywords": "nutmix dry fruits almonds cashew raisins healthy snacks protien jar trail mix grocery vegan"
   },
 
   {
@@ -146,7 +159,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/71+FoXSsSDL._SL1500_.jpg",
     "link": "https://amzn.to/3LuFBUr",
-    "rating": 4.2
+    "rating": 4.2,
+    "keywords": "prune juice healthy drink digestive support antioxide low sugar california natural juice"
   },
 
   {
@@ -157,7 +171,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/61ICqwIbmyL._SL1080_.jpg",
     "link": "https://amzn.to/4aUl8TE",
-    "rating": 4.1
+    "rating": 4.1,
+    "keywords": "orange juice vitamin c healthy drink packaged juice breakfast beverage fiber enriched"
   },
 
   {
@@ -168,7 +183,8 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/71d0wtpbxJL._SL1500_.jpg",
     "link": "https://amzn.to/4sADQWB",
-    "rating": 4.4
+    "rating": 4.4,
+    "keywords": "oats breakfast cereal wholegrain quaker porridge healthy diet high fiber dalia wight loss"
   },
 
   {
@@ -179,17 +195,19 @@
     "category": "grocery",
     "image": "https://m.media-amazon.com/images/I/71DublkdqFL._SL1500_.jpg",
     "link": "https://amzn.to/45Ogwe6",
-    "rating": 4.4
+    "rating": 4.4,
+    "keywords": "sandal soap mysore fragrance bath body care harbal soap natural skincare ayurvedic pack"
   },
 
   {
     "name": "Lakme Eyeconic Regime Kit- Kajal | Mascara| Eyeliner 13.35 ml",
     "price": "₹649",
     "mrp": "₹975",
-    "discount": "%33",
+    "discount": "33%",
     "category": "beauty",
     "image": "https://m.media-amazon.com/images/I/51A5uI49kCL._SL1000_.jpg",
     "link": "https://amzn.to/4qLe1RZ",
-    "rating": 4.2
+    "rating": 4.2,
+    "keywords": "lakme makeup beauty kit kajal mascara eyeliner eye makeup cosemetic waterproof long lasting"
   }
 ]
