@@ -1,3 +1,16 @@
+function detectStore(url) {
+  url = url.toLowerCase();
+
+  if (url.includes("amazon") || url.includes("amzn")) return "Amazon";
+  if (url.includes("flipkart") || url.includes("fkrt")) return "Flipkart";
+  if (url.includes("meesho")) return "Meesho";
+  if (url.includes("ajio")) return "Ajio";
+  if (url.includes("myntra")) return "Myntra";
+  if (url.includes("jiomart")) return "JioMart";
+
+  return "Online Store";
+}
+
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
@@ -25,7 +38,7 @@ fetch("products.json")
       <span class="off">${p.discount}</span>
     </p>
 
-    <p class="store">Amazon</p>
+    <p class="store">${detectStore(p.link)}</p>
 
     <div class="actions">
       <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
@@ -65,19 +78,16 @@ function setupFilters() {
   });
 }
 
-// ⭐ Generate star icons based on rating value
 function generateStars(rating) {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+  
   let stars = '';
 
-  for (let i = 0; i < fullStars; i++) {
-    stars += '⭐';
-  }
-
-  if (halfStar) {
-    stars += '⭐';
-  }
+  for (let i = 0; i < fullStars; i++) stars += "⭐";
+  if (halfStar) stars += "🌟";
+  for (let i = 0; i < emptyStars; i++) stars += "☆";
 
   return stars;
 }
