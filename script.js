@@ -7,22 +7,17 @@ fetch("products.json")
 
   let container = document.getElementById("products");
 
-    container.innerHTML = products.map(p => `
-  <div class="deal-card"
-    data-category="${p.category}"
-    data-name="${p.name.toLowerCase()}"
-    data-keywords="${(p.keywords || '').toLowerCase()}">
+   container.innerHTML = products.map(p => `
+  <div class="deal-card" data-category="${p.category}" data-name="${p.name.toLowerCase()}">
 
     <img src="${p.image}" class="product-img" alt="${p.name}">
 
     <h2>${p.name}</h2>
 
-    ${p.rating ? `
     <div class="rating">
       ${generateStars(p.rating)}
       <span class="rating-number">${p.rating}</span>
     </div>
-    ` : ''}
 
     <p class="price">
       <span class="new">${p.price}</span>
@@ -31,7 +26,17 @@ fetch("products.json")
     </p>
 
     <p class="store">Amazon</p>
-    <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+
+    <div class="actions">
+      <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+
+      <button class="share-btn" 
+        data-link="${p.link}" 
+        data-name="${p.name}">
+        <span class="share-icon">🔗</span> Share
+      </button>
+    </div>
+
   </div>
 `).join('');
 
@@ -116,4 +121,24 @@ searchInput.addEventListener('input', () => {
       card.style.display = "none";
     }
   });
+});
+
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('share-btn')) {
+    const link = e.target.getAttribute('data-link');
+    const name = e.target.getAttribute('data-name');
+
+    const text = `Check this deal: ${name}\nBuy 👉 ${link}`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: text,
+        url: link
+      });
+    } else {
+      navigator.clipboard.writeText(text);
+      alert('Link copied! You can paste and share.');
+    }
+  }
 });
