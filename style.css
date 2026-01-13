@@ -400,3 +400,87 @@ body:not(.dark-mode) .toggle-btn {
 .dark-mode .social-links a {
   color: #ffd54f;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.pagination button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button:hover {
+    opacity: 0.9;
+}
+
+.pagination .pages {
+    display: flex;
+    gap: 6px;
+}
+
+.pagination .page {
+    color: white;
+    background: #222;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination .page.active {
+    background: #007bff;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#products {
+    display: grid;
+    gap: 18px;
+    justify-content: center;
+}
+
+/* Desktop (large) */
+@media (min-width: 1200px) {
+    #products {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    #products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Phone */
+@media (max-width: 767px) {
+    #products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
