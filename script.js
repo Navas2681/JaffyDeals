@@ -1,13 +1,11 @@
 function detectStore(url) {
   url = url.toLowerCase();
-
   if (url.includes("amazon") || url.includes("amzn")) return "Amazon";
   if (url.includes("flipkart") || url.includes("fkrt")) return "Flipkart";
   if (url.includes("meesho")) return "Meesho";
   if (url.includes("ajio")) return "Ajio";
   if (url.includes("myntra")) return "Myntra";
   if (url.includes("jiomart")) return "JioMart";
-
   return "Online Store";
 }
 
@@ -19,7 +17,7 @@ fetch("products.json")
   .then(res => res.json())
   .then(products => {
     allProducts = products.reverse();
-    filteredProducts = [...allProducts]; // important!!
+    filteredProducts = [...allProducts];
     renderPage();
     renderPagination();
     setupFilters();
@@ -30,16 +28,20 @@ function getPerPage() {
   return 15;
 }
 
-  function renderPage() {
-  let perPage = getPerPage();
-  let start = (currentPage - 1) * perPage;
-  let end = start + perPage;
-  let pageProducts = filteredProducts.slice(start, end);
+function renderPage() {
+  const perPage = getPerPage();
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
 
-  let container = document.getElementById("products");
+  const pageProducts = filteredProducts.slice(start, end);
+
+  const container = document.getElementById("products");
   container.innerHTML = pageProducts.map(p => `
-    <div class="deal-card" data-category="${p.category}" data-name="${p.name.toLowerCase()}">
-
+    <div class="deal-card" 
+         data-name="${p.name.toLowerCase()}" 
+         data-category="${p.category?.toLowerCase() || ''}"
+         data-keywords="${p.keywords?.toLowerCase() || ''}">
+         
       <img src="${p.image}" class="product-img" alt="${p.name}">
       <h2>${p.name}</h2>
 
@@ -50,40 +52,37 @@ function getPerPage() {
 
       <p class="price">
         <span class="new">${p.price}</span>
-        <span class="old">${p.mrp}</span>
-        <span class="off">${p.discount}</span>
+        <span class="old">${p.mrp || ''}</span>
+        ${p.discount ? `<span class="off">${p.discount}</span>` : ""}
       </p>
 
       <p class="store">${detectStore(p.link)}</p>
 
       <div class="actions">
-        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-        <button class="share-btn" data-link="${p.link}" data-name="${p.name}">
-          🔗 Share
-        </button>
+        <button class="buy-btn" data-link="${p.link}" data-name="${p.name}">Buy Now</button>
+        <button class="share-btn" data-link="${p.link}" data-name="${p.name}">Share</button>
       </div>
-
     </div>
-  `).join('');
+  `).join("");
 }
-    function renderPagination() {
-  let perPage = getPerPage();
-  let totalPages = Math.ceil(filteredProducts.length / perPage);
 
-  let pagesContainer = document.querySelector(".pagination .pages");
+function renderPagination() {
+  const perPage = getPerPage();
+  const totalPages = Math.ceil(filteredProducts.length / perPage);
+
+  const pagination = document.querySelector(".pagination");
+  const pagesContainer = document.querySelector(".pagination .pages");
   pagesContainer.innerHTML = "";
 
-  // hide pagination if only 1 page
   if (totalPages <= 1) {
-    document.querySelector(".pagination").style.display = "none";
+    pagination.style.display = "none";
     return;
   } else {
-    document.querySelector(".pagination").style.display = "flex";
+    pagination.style.display = "flex";
   }
 
   for (let i = 1; i <= totalPages; i++) {
-    let active = (i === currentPage) ? "active" : "";
-    pagesContainer.innerHTML += `<span class="page ${active}">${i}</span>`;
+    pagesContainer.innerHTML += `<span class="page ${i === currentPage ? "active" : ""}">${i}</span>`;
   }
 
   document.querySelector(".prev").disabled = currentPage === 1;
@@ -94,6 +93,7 @@ function getPerPage() {
       currentPage = Number(btn.textContent);
       renderPage();
       renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
   });
 
@@ -102,6 +102,7 @@ function getPerPage() {
       currentPage--;
       renderPage();
       renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -110,106 +111,70 @@ function getPerPage() {
       currentPage++;
       renderPage();
       renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 }
 
-    function setupFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-
+function setupFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
   filterButtons.forEach(btn => {
     btn.onclick = () => {
-
-      const filter = btn.getAttribute('data-filter');
-
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
+      const filter = btn.getAttribute("data-filter");
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
       currentPage = 1;
-
-      if (filter === 'all') {
-        filteredProducts = [...allProducts];
-      } else {
-        filteredProducts = allProducts.filter(p => p.category === filter);
-      }
-
+      filteredProducts = (filter === "all") ? [...allProducts] : allProducts.filter(p => p.category === filter);
       renderPage();
       renderPagination();
     };
   });
 }
 
+function handleSearch(query) {
+  query = query.toLowerCase();
+  filteredProducts = allProducts.filter(p =>
+    p.name.toLowerCase().includes(query) ||
+    p.category?.toLowerCase().includes(query) ||
+    p.keywords?.toLowerCase().includes(query)
+  );
+  currentPage = 1;
+  renderPage();
+  renderPagination();
+}
+
+const searchInput = document.querySelector(".search-box input");
+searchInput.addEventListener("input", e => handleSearch(e.target.value));
+
 function generateStars(rating) {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-  
-  let stars = '';
-
-  for (let i = 0; i < fullStars; i++) stars += "⭐";
-  if (halfStar) stars += "🌟";
-  for (let i = 0; i < emptyStars; i++) stars += "☆";
-
-  return stars;
+  return "⭐".repeat(fullStars) + (halfStar ? "🌟" : "") + "☆".repeat(emptyStars);
 }
 
 const toggle = document.getElementById("themeToggle");
-
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-
-  toggle.textContent = document.body.classList.contains("dark-mode")
-    ? "☀️"
-    : "🌙";
+  localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
 });
-
-// Save theme preference
-toggle.addEventListener("click", () => {
-  const isDark = document.body.classList.contains("dark-mode");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
-
-// Load theme on startup
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "dark") {
+if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark-mode");
 }
 
-const searchInput = document.querySelector('.search-box input');
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("buy-btn")) {
+    window.open(e.target.getAttribute("data-link"), "_blank");
+  }
 
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.toLowerCase();
-  const cards = document.querySelectorAll('.deal-card');
-
-  cards.forEach(card => {
-    const name = card.getAttribute('data-name');
-    const category = card.getAttribute('data-category');
-    const keywords = card.getAttribute('data-keywords') || '';
-
-    if (name.includes(q) || category.includes(q) || keywords.includes(q)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
-
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('share-btn')) {
-    const link = e.target.getAttribute('data-link');
-    const name = e.target.getAttribute('data-name');
-
+  if (e.target.classList.contains("share-btn")) {
+    const link = e.target.getAttribute("data-link");
+    const name = e.target.getAttribute("data-name");
     const text = `Check this deal: ${name}\nBuy 👉 ${link}`;
-
     if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: text,
-        url: link
-      });
+      navigator.share({ title: name, text, url: link });
     } else {
-      navigator.clipboard.writeText(text);
-      alert('Link copied! You can paste and share.');
+      alert(text);
     }
   }
 });
