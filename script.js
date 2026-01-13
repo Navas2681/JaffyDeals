@@ -11,70 +11,131 @@ function detectStore(url) {
   return "Online Store";
 }
 
+let allProducts = [];
+let filteredProducts = [];
+let currentPage = 1;
+
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
-  
-  // newest items first
-  products = products.reverse();
+    allProducts = products.reverse();
+    filteredProducts = [...allProducts]; // important!!
+    renderPage();
+    renderPagination();
+    setupFilters();
+});
+
+function getPerPage() {
+  if (window.innerWidth < 768) return 12;
+  return 15;
+}
+
+  function renderPage() {
+  let perPage = getPerPage();
+  let start = (currentPage - 1) * perPage;
+  let end = start + perPage;
+  let pageProducts = filteredProducts.slice(start, end);
 
   let container = document.getElementById("products");
+  container.innerHTML = pageProducts.map(p => `
+    <div class="deal-card" data-category="${p.category}" data-name="${p.name.toLowerCase()}">
 
-   container.innerHTML = products.map(p => `
-  <div class="deal-card" data-category="${p.category}" data-name="${p.name.toLowerCase()}">
+      <img src="${p.image}" class="product-img" alt="${p.name}">
+      <h2>${p.name}</h2>
 
-    <img src="${p.image}" class="product-img" alt="${p.name}">
+      <div class="rating">
+        ${generateStars(p.rating)}
+        <span class="rating-number">${p.rating}</span>
+      </div>
 
-    <h2>${p.name}</h2>
+      <p class="price">
+        <span class="new">${p.price}</span>
+        <span class="old">${p.mrp}</span>
+        <span class="off">${p.discount}</span>
+      </p>
 
-    <div class="rating">
-      ${generateStars(p.rating)}
-      <span class="rating-number">${p.rating}</span>
+      <p class="store">${detectStore(p.link)}</p>
+
+      <div class="actions">
+        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+        <button class="share-btn" data-link="${p.link}" data-name="${p.name}">
+          🔗 Share
+        </button>
+      </div>
+
     </div>
+  `).join('');
+}
+    function renderPagination() {
+  let perPage = getPerPage();
+  let totalPages = Math.ceil(filteredProducts.length / perPage);
 
-    <p class="price">
-      <span class="new">${p.price}</span>
-      <span class="old">${p.mrp}</span>
-      <span class="off">${p.discount}</span>
-    </p>
+  let pagesContainer = document.querySelector(".pagination .pages");
+  pagesContainer.innerHTML = "";
 
-    <p class="store">${detectStore(p.link)}</p>
+  // hide pagination if only 1 page
+  if (totalPages <= 1) {
+    document.querySelector(".pagination").style.display = "none";
+    return;
+  } else {
+    document.querySelector(".pagination").style.display = "flex";
+  }
 
-    <div class="actions">
-      <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+  for (let i = 1; i <= totalPages; i++) {
+    let active = (i === currentPage) ? "active" : "";
+    pagesContainer.innerHTML += `<span class="page ${active}">${i}</span>`;
+  }
 
-      <button class="share-btn" 
-        data-link="${p.link}" 
-        data-name="${p.name}">
-        <span class="share-icon">🔗</span> Share
-      </button>
-    </div>
+  document.querySelector(".prev").disabled = currentPage === 1;
+  document.querySelector(".next").disabled = currentPage === totalPages;
 
-  </div>
-`).join('');
-
-    setupFilters();
+  document.querySelectorAll(".page").forEach(btn => {
+    btn.onclick = () => {
+      currentPage = Number(btn.textContent);
+      renderPage();
+      renderPagination();
+    };
   });
 
-function setupFilters() {
+  document.querySelector(".prev").onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage();
+      renderPagination();
+    }
+  };
+
+  document.querySelector(".next").onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage();
+      renderPagination();
+    }
+  };
+}
+
+    function setupFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.deal-card');
 
   filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.onclick = () => {
+
       const filter = btn.getAttribute('data-filter');
 
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      cards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+      currentPage = 1;
+
+      if (filter === 'all') {
+        filteredProducts = [...allProducts];
+      } else {
+        filteredProducts = allProducts.filter(p => p.category === filter);
+      }
+
+      renderPage();
+      renderPagination();
+    };
   });
 }
 
