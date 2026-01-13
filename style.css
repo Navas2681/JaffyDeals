@@ -509,3 +509,71 @@ body:not(.dark-mode) .toggle-btn {
   background: #0069d9;
 }
 
+.subfilters {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 15px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.subfilters::-webkit-scrollbar {
+  height: 6px;
+}
+
+.subfilters button {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.subfilters button.active {
+  background: #007aff;
+  color: white;
+  border-color: #007aff;
+}
+
+#subfilters {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+#subfilters::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-btn {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.sub-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.subfilters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* ADD THIS */
+  touch-action: pan-x; /* IMPORTANT */
+}

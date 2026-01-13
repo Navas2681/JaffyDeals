@@ -13,6 +13,77 @@ let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 
+const subCategories = {
+  electronics: [
+    "📺 Home Entertainment",
+    "🎧 Audio & Headphones",
+    "⌚ Smart Wearables",
+    "💻 Computing & Laptops",
+    "🖨️ Office Electronics",
+    "🔌 Accessories",
+    "📸 Cameras & Drones",
+    "🏠 Smart Home",
+    "⚡ Power & Energy",
+    "🚗 Vehicle Electronics",
+    "🎮 Gaming Gear"
+  ],
+
+  mobile: [
+    "Apple",
+    "Samsung",
+    "OnePlus",
+    "Xiaomi",
+    "Realme",
+    "Vivo",
+    "Oppo",
+    "Motorola",
+    "Nothing",
+    "IQOO",
+    "Google Pixel",
+    "Poco",
+    "Tecno",
+    "Infinix",
+    "Lava"
+  ]
+};
+
+function renderSubFilters(category) {
+  const box = document.getElementById("subfilters");
+
+  if (subCategories[category]) {
+    box.innerHTML = subCategories[category]
+      .map(name => `<button class="sub-btn">${name}</button>`)
+      .join('');
+
+    attachSubFilterEvents(); // attach click events
+  } else {
+    box.innerHTML = "";
+  }
+}
+
+function attachSubFilterEvents() {
+  document.querySelectorAll(".sub-btn").forEach(btn => {
+    btn.onclick = () => {
+
+      // 🔵 Highlight system
+      document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const name = btn.textContent.toLowerCase();
+
+      filteredProducts = allProducts.filter(p =>
+        p.name.toLowerCase().includes(name) ||
+        (p.keywords && p.keywords.toLowerCase().includes(name))
+      );
+
+      currentPage = 1;
+      renderPage();
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  });
+}
+
 fetch("products.json")
   .then(res => res.json())
   .then(products => {
@@ -117,16 +188,30 @@ function renderPagination() {
 }
 
 function setupFilters() {
-  const filterButtons = document.querySelectorAll(".filter-btn");
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
   filterButtons.forEach(btn => {
     btn.onclick = () => {
-      const filter = btn.getAttribute("data-filter");
-      filterButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+      const filter = btn.getAttribute('data-filter');
+
+      // highlight active main category
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // show subfilters only for specific categories
+      renderSubFilters(filter);
+
       currentPage = 1;
-      filteredProducts = (filter === "all") ? [...allProducts] : allProducts.filter(p => p.category === filter);
+
+      if (filter === 'all') {
+        filteredProducts = [...allProducts];
+      } else {
+        filteredProducts = allProducts.filter(p => p.category === filter);
+      }
+
       renderPage();
       renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
   });
 }
@@ -178,3 +263,41 @@ document.addEventListener("click", function(e) {
     }
   }
 });
+
+// ... your last existing JavaScript code
+// (share, theme toggle, saved theme, etc)
+
+
+// ------------------------------------
+// ADD THE SWIPE SUBFILTER SCROLL CODE HERE
+// ------------------------------------
+
+const subFiltersBox = document.getElementById("subfilters");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+subFiltersBox.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - subFiltersBox.offsetLeft;
+  scrollLeft = subFiltersBox.scrollLeft;
+});
+
+subFiltersBox.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+subFiltersBox.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+subFiltersBox.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - subFiltersBox.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  subFiltersBox.scrollLeft = scrollLeft - walk;
+});
+
+// Done 🥳
