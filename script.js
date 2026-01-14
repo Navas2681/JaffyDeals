@@ -317,8 +317,11 @@ function handleSearch(query) {
   renderPagination();
 }
 
-const searchInput = document.querySelector(".search-box input");
-searchInput.addEventListener("input", e => handleSearch(e.target.value));
+const searchInputBox = document.getElementById("searchInput");
+const searchIcon = document.querySelector(".search-icon");
+
+searchInputBox.addEventListener("input", e => handleSearch(e.target.value));
+searchIcon.addEventListener("click", () => handleSearch(searchInputBox.value));
 
 function generateStars(rating) {
   const fullStars = Math.floor(rating);

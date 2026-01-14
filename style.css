@@ -681,4 +681,29 @@ body:not(.dark-mode) .toggle-btn {
   }
 }
 
-/* adding for laptop */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 3px solid #f4c045; /* yellow border */
+  padding: 10px 15px;
+  border-radius: 50px;
+  background: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  background: transparent;
+}
+
+.search-icon {
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #005ad6;
+}
