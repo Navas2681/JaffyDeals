@@ -577,3 +577,70 @@ body:not(.dark-mode) .toggle-btn {
   -webkit-overflow-scrolling: touch; /* ADD THIS */
   touch-action: pan-x; /* IMPORTANT */
 }
+
+.fashion-panel {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 6px;
+}
+
+.filter-row::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  color: #333;
+}
+
+.tab-btn.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.f-btn {
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.f-btn.active {
+  background: #4a7dff;
+  color: #fff;
+  border-color: #4a7dff;
+}
+
+#fashion-gender, #fashion-sub {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#fashion-sub {
+  overflow-x: auto;
+  scrollbar-width: none; /* hide scrollbar firefox */
+}
+
+#fashion-sub::-webkit-scrollbar {
+  display: none; /* hide scrollbar chrome */
+}

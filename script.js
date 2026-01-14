@@ -12,55 +12,135 @@ function detectStore(url) {
 let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
+let userFashionFilter = {
+  gender: null,
+  sub: [],
+  occasion: [],
+  price: null
+};
 
 const subCategories = {
   electronics: [
-    "📺 Home Entertainment",
-    "🎧 Audio & Headphones",
-    "⌚ Smart Wearables",
-    "💻 Computing & Laptops",
-    "🖨️ Office Electronics",
-    "🔌 Accessories",
-    "📸 Cameras & Drones",
-    "🏠 Smart Home",
-    "⚡ Power & Energy",
-    "🚗 Vehicle Electronics",
-    "🎮 Gaming Gear"
+    { label: "📺 Home Entertainment", value: "home entertainment" },
+    { label: "🎧 Headphones & 🔊 Speakers", value: "headphones & speakers" },
+    { label: "⌚ Smart Wearables", value: "smart wearables" },
+    { label: "💻 Computing & Laptops", value: "computing & laptops" },
+    { label: "🖨 Office Electronics", value: "office electronics" },
+    { label: "🔌 Accessories", value: "accessories" },
+    { label: "📸 Cameras & Drones", value: "cameras & drones" },
+    { label: "🏠 Smart Home", value: "smart home" },
+    { label: "⚡ Power & Energy", value: "power & energy" },
+    { label: "🚗 Vehicle Electronics", value: "vehicle electronics" },
+    { label: "🎮 Gaming Gear", value: "gaming gear" }
   ],
 
   mobile: [
-    "Apple",
-    "Samsung",
-    "OnePlus",
-    "Xiaomi",
-    "Realme",
-    "Vivo",
-    "Oppo",
-    "Motorola",
-    "Nothing",
-    "IQOO",
-    "Google Pixel",
-    "Poco",
-    "Tecno",
-    "Infinix",
-    "Lava"
-  ]
+  { label: "Apple", value: "apple" },
+  { label: "Samsung", value: "samsung" },
+  { label: "OnePlus", value: "oneplus" },
+  { label: "Xiaomi", value: "xiaomi" },
+  { label: "Realme", value: "realme" },
+  { label: "Vivo", value: "vivo" },
+  { label: "Oppo", value: "oppo" },
+  { label: "Motorola", value: "motorola" },
+  { label: "Nothing", value: "nothing" },
+  { label: "IQOO", value: "iqoo" },
+  { label: "Google Pixel", value: "google pixel" },
+  { label: "Poco", value: "poco" },
+  { label: "Tecno", value: "tecno" },
+  { label: "Infinix", value: "infinix" },
+  { label: "Lava", value: "lava" }
+]
 };
 
+const fashionFilters = {
+  gender: ["Women", "Men", "Kids"],
+
+  sub: {
+    Women: ["Tops", "Dresses", "Sarees", "Jeans", "Winter Wear", "Footwear"],
+    Men: ["T-Shirts", "Shirts", "Jeans", "Winter Wear", "Activewear", "Footwear"],
+    Kids: ["Boys Clothing", "Girls Clothing", "Footwear", "Accessories"]
+  },
+
+};
+
+function showFashionPanel() {
+  document.getElementById("fashion-panel").style.display = "block";
+  renderRow("fashion-gender", fashionFilters.gender, "gender");
+}
+
+function hideFashionPanel() {
+  document.getElementById("fashion-panel").style.display = "none";
+}
+
+function renderRow(containerId, items, type) {
+  const box = document.getElementById(containerId);
+
+  box.innerHTML = items.map(item =>
+    `<button class="f-btn" data-type="${type}" data-value="${item}">${item}</button>`
+  ).join('');
+
+  attachFashionClickEvents();
+}
+
+function attachFashionClickEvents() {
+  document.querySelectorAll(".f-btn").forEach(btn => {
+    btn.onclick = () => {
+      const name = btn.textContent.toLowerCase();
+      const type = btn.dataset.type;
+      const val = btn.dataset.value;
+
+      // Highlight buttons
+      document.querySelectorAll(".f-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // ---------------------------
+      // FASHION FILTER START
+      // ---------------------------
+
+      if (type === "gender") {
+        userFashionFilter.gender = val;
+
+        // Filter only gender
+        filteredProducts = allProducts.filter(p =>
+          p.gender?.toLowerCase() === val.toLowerCase()
+        );
+
+        // Load sub filters for this gender
+        renderRow("fashion-sub", fashionFilters.sub[val], "sub");
+      }
+
+      if (type === "sub") {
+        filteredProducts = allProducts.filter(p =>
+          p.gender?.toLowerCase() === userFashionFilter.gender?.toLowerCase() &&
+          p.sub?.toLowerCase() === val.toLowerCase()
+        );
+      }
+
+      // ---------------------------
+      // RENDER
+      // ---------------------------
+
+      currentPage = 1;
+      renderPage();
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  });
+}
 function renderSubFilters(category) {
   const box = document.getElementById("subfilters");
 
   if (subCategories[category]) {
-    box.innerHTML = subCategories[category]
-      .map(name => `<button class="sub-btn">${name}</button>`)
-      .join('');
+  box.innerHTML = subCategories[category]
+    .map(item => `<button class="sub-btn" data-sub="${item.value}">${item.label}</button>`)
+    .join('');
 
-    attachSubFilterEvents(); // attach click events
-  } else {
-    box.innerHTML = "";
-  }
+  attachSubFilterEvents(); 
+} else {
+  box.innerHTML = "";
 }
-
+}
 function attachSubFilterEvents() {
   document.querySelectorAll(".sub-btn").forEach(btn => {
     btn.onclick = () => {
@@ -69,12 +149,13 @@ function attachSubFilterEvents() {
       document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const name = btn.textContent.toLowerCase();
+      const name = btn.dataset.sub.toLowerCase();
 
       filteredProducts = allProducts.filter(p =>
-        p.name.toLowerCase().includes(name) ||
-        (p.keywords && p.keywords.toLowerCase().includes(name))
-      );
+  p.subcategory?.toLowerCase().includes(name) ||
+  p.name.toLowerCase().includes(name) ||
+  p.keywords?.toLowerCase().includes(name)
+);
 
       currentPage = 1;
       renderPage();
@@ -188,22 +269,30 @@ function renderPagination() {
 }
 
 function setupFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
   filterButtons.forEach(btn => {
     btn.onclick = () => {
-      const filter = btn.getAttribute('data-filter');
+      const filter = btn.getAttribute("data-filter");
 
-      // highlight active main category
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      // highlight active tab
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-      // show subfilters only for specific categories
-      renderSubFilters(filter);
+      // FASHION SPECIAL
+      if (filter === "fashion") {
+        showFashionPanel();
+        document.getElementById("subfilters").style.display = "none";
+      } else {
+        hideFashionPanel();
+        document.getElementById("subfilters").style.display = "flex";
+        renderSubFilters(filter);
+      }
 
+      // normal filtering
       currentPage = 1;
 
-      if (filter === 'all') {
+      if (filter === "all") {
         filteredProducts = [...allProducts];
       } else {
         filteredProducts = allProducts.filter(p => p.category === filter);
@@ -215,7 +304,7 @@ function setupFilters() {
     };
   });
 }
-
+  
 function handleSearch(query) {
   query = query.toLowerCase();
   filteredProducts = allProducts.filter(p =>
@@ -300,4 +389,4 @@ subFiltersBox.addEventListener('mousemove', (e) => {
   subFiltersBox.scrollLeft = scrollLeft - walk;
 });
 
-// Done 🥳
+// Done 
