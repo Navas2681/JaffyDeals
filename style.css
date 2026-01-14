@@ -644,3 +644,41 @@ body:not(.dark-mode) .toggle-btn {
 #fashion-sub::-webkit-scrollbar {
   display: none; /* hide scrollbar chrome */
 }
+
+/* ADDING SOME NEW FILES  */
+
+.category-bar {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 18px;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.search-box {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .category-container {
+    margin-bottom: 6px;
+  }
+}
+
+/* adding for laptop */
