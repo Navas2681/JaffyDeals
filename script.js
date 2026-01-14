@@ -323,6 +323,14 @@ const searchIcon = document.querySelector(".search-icon");
 searchInputBox.addEventListener("input", e => handleSearch(e.target.value));
 searchIcon.addEventListener("click", () => handleSearch(searchInputBox.value));
 
+// 🟡 CLOSE KEYBOARD ON ENTER (Mobile fix)
+searchInputBox.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    handleSearch(searchInputBox.value);
+    searchInputBox.blur(); // close keyboard
+  }
+});
+
 function generateStars(rating) {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
