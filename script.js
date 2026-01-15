@@ -269,7 +269,7 @@ function renderPagination() {
 }
 
 function setupFilters() {
-  const filterButtons = document.querySelectorAll(".filter-btn");
+  const filterButtons = document.querySelectorAll(".filter-btn, .main-cat-btn");
 
   filterButtons.forEach(btn => {
     btn.onclick = () => {
