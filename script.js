@@ -26,7 +26,7 @@ const subCategories = {
     { label: "⌚ Smart Wearables", value: "smart wearables" },
     { label: "💻 Computing & Laptops", value: "computing & laptops" },
     { label: "🖨 Office Electronics", value: "office electronics" },
-    { label: "🔌 Accessories", value: "accessories" },
+    { label: "🔌 Mobile Accessories", value: "mobile accessories" },
     { label: "📸 Cameras & Drones", value: "cameras & drones" },
     { label: "🏠 Smart Home", value: "smart home" },
     { label: "⚡ Power & Energy", value: "power & energy" },
@@ -219,53 +219,97 @@ function renderPage() {
 }
 
 function renderPagination() {
-  const perPage = getPerPage();
-  const totalPages = Math.ceil(filteredProducts.length / perPage);
+    const perPage = getPerPage();
+    const totalPages = Math.ceil(filteredProducts.length / perPage);
+    const current = currentPage;
 
-  const pagination = document.querySelector(".pagination");
-  const pagesContainer = document.querySelector(".pagination .pages");
-  pagesContainer.innerHTML = "";
+    const prevBtn = document.querySelector(".pg-prev");
+    const nextBtn = document.querySelector(".pg-next");
+    const pagesContainer = document.querySelector(".pg-pages");
 
-  if (totalPages <= 1) {
-    pagination.style.display = "none";
-    return;
-  } else {
-    pagination.style.display = "flex";
-  }
+    pagesContainer.innerHTML = "";
 
-  for (let i = 1; i <= totalPages; i++) {
-    pagesContainer.innerHTML += `<span class="page ${i === currentPage ? "active" : ""}">${i}</span>`;
-  }
+    // Hide if only 1 page
+    if (totalPages <= 1) {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        return;
+    }
 
-  document.querySelector(".prev").disabled = currentPage === 1;
-  document.querySelector(".next").disabled = currentPage === totalPages;
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
 
-  document.querySelectorAll(".page").forEach(btn => {
-    btn.onclick = () => {
-      currentPage = Number(btn.textContent);
-      renderPage();
-      renderPagination();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    function addPage(num) {
+        const btn = document.createElement("button");
+        btn.className = "pg-page" + (num === current ? " active" : "");
+        btn.textContent = num;
+        btn.onclick = () => goToPage(num);
+        pagesContainer.appendChild(btn);
+    }
+
+    // page layout logic
+    if (totalPages <= 5) {
+        for (let i = 1; i <= totalPages; i++) addPage(i);
+    } else {
+        addPage(1);
+
+        if (current > 3) {
+            const dots = document.createElement("span");
+            dots.className = "pg-ellipsis";
+            dots.textContent = "...";
+            pagesContainer.appendChild(dots);
+        }
+
+        const start = Math.max(2, current - 1);
+        const end = Math.min(totalPages - 1, current + 1);
+
+        for (let i = start; i <= end; i++) addPage(i);
+
+        if (current < totalPages - 2) {
+            const dots = document.createElement("span");
+            dots.className = "pg-ellipsis";
+            dots.textContent = "...";
+            pagesContainer.appendChild(dots);
+        }
+
+        addPage(totalPages);
+    }
+
+    // Disable prev/next at edges
+    prevBtn.disabled = (current === 1);
+    nextBtn.disabled = (current === totalPages);
+
+    // button actions
+    prevBtn.onclick = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderPage();
+            renderPagination();
+            scrollUp();
+        }
     };
-  });
 
-  document.querySelector(".prev").onclick = () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderPage();
-      renderPagination();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+    nextBtn.onclick = () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderPage();
+            renderPagination();
+            scrollUp();
+        }
+    };
+}
 
-  document.querySelector(".next").onclick = () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderPage();
-      renderPagination();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+// CHANGE PAGE DIRECTLY
+function goToPage(num) {
+    currentPage = num;
+    renderPage();
+    renderPagination();
+    scrollUp();
+}
+
+// SMOOTH SCROLL UP
+function scrollUp() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function setupFilters() {

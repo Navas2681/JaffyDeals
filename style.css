@@ -719,3 +719,74 @@ body:not(.dark-mode) .toggle-btn {
   margin-top: 10px !important;
   padding-top: 0 !important;
 }
+
+/* ===== PAGINATION STYLING ===== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+/* Prev / Next */
+.pg-prev,
+.pg-next {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #1c1c1c; /* black */
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pg-prev:hover,
+.pg-next:hover {
+    background: #2a2a2a;
+}
+
+/* Disabled state */
+.pg-prev:disabled,
+.pg-next:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Page buttons */
+.pg-pages {
+    display: flex;
+    gap: 6px;
+}
+
+/* Normal page button */
+.pg-page {
+    padding: 6px 12px;
+    background: #1c1c1c; /* black */
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover */
+.pg-page:hover {
+    background: #2a2a2a;
+}
+
+/* Active selected page */
+.pg-page.active {
+    background: #007aff;      /* selected blue */
+    color: #fff;
+    font-weight: 600;
+    border: 2px solid #000;   /* highlight border */
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    pointer-events: none;     /* prevents clicking current */
+}
+
+/* Ellipsis dots (...) */
+.pg-ellipsis {
+    color: #aaa;
+    padding: 6px 10px;
+}
