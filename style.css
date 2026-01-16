@@ -719,3 +719,7 @@ body:not(.dark-mode) .toggle-btn {
   margin-top: 10px !important;
   padding-top: 0 !important;
 }
+
+html, body {
+  overscroll-behavior: none;
+}
