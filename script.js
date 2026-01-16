@@ -26,7 +26,7 @@ const subCategories = {
     { label: "⌚ Smart Wearables", value: "smart wearables" },
     { label: "💻 Computing & Laptops", value: "computing & laptops" },
     { label: "🖨 Office Electronics", value: "office electronics" },
-    { label: "🔌 Mobile Accessories", value: "mobile accessories" },
+    { label: "🔌 Accessories", value: "accessories" },
     { label: "📸 Cameras & Drones", value: "cameras & drones" },
     { label: "🏠 Smart Home", value: "smart home" },
     { label: "⚡ Power & Energy", value: "power & energy" },
