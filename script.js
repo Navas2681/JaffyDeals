@@ -216,6 +216,8 @@ function renderPage() {
       </div>
     </div>
   `).join("");
+  
+  setupImageViewer();
 }
 
 function renderPagination() {
@@ -311,6 +313,31 @@ function goToPage(num) {
 function scrollUp() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+/* ==========================
+   IMAGE VIEWER
+===========================*/
+
+const viewer = document.getElementById("img-viewer");
+const viewerImg = document.getElementById("viewer-img");
+
+function setupImageViewer() {
+    document.querySelectorAll(".product-img").forEach(img => {
+        img.onclick = () => {
+            viewerImg.src = img.src;
+            viewer.style.display = "flex";
+        };
+    });
+}
+
+document.querySelector(".close-btn").onclick = () => {
+    viewer.style.display = "none";
+};
+
+// close when clicking outside
+viewer.onclick = (e) => {
+    if (e.target === viewer) viewer.style.display = "none";
+};
 
 function setupFilters() {
   const filterButtons = document.querySelectorAll(".filter-btn");
