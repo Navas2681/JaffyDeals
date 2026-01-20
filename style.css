@@ -817,3 +817,19 @@ body:not(.dark-mode) .toggle-btn {
   color: white;
   cursor: pointer;
 }
+
+/* ======= Mobile UI Spacing Fix ======= */
+@media (max-width: 768px) {
+  .filters {
+    margin-bottom: 6px;
+  }
+
+  .subfilters {
+    margin-bottom: 6px;
+  }
+
+  .deals-grid {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
