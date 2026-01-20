@@ -817,23 +817,3 @@ body:not(.dark-mode) .toggle-btn {
   color: white;
   cursor: pointer;
 }
-
-/* ======= Mobile Tight Spacing ======= */
-@media (max-width: 768px) {
-  .filters {
-    margin-bottom: 4px;
-  }
-
-  .subfilters {
-    margin-bottom: 4px;
-  }
-
-  .deals-grid {
-    margin-top: -2px;
-    padding-top: 0;
-  }
-
-  .deal-card {
-    margin-top: 8px;
-  }
-}

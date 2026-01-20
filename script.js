@@ -38,7 +38,7 @@ const subCategories = {
   { label: "🍎 Apple", value: "apple" },
   { label: "📱 Samsung", value: "samsung" },
   { label: "➕ OnePlus", value: "oneplus" },
-  { label: "🟧 Xiaomi", value: "xiaomi" },
+  { label: "🇨🇳 Xiaomi", value: "xiaomi" },
   { label: "⚡ Realme", value: "realme" },
   { label: "📸 Vivo", value: "vivo" },
   { label: "✨ Oppo", value: "oppo" },
@@ -238,27 +238,11 @@ function attachSubFilterEvents() {
 
       const name = btn.dataset.sub.toLowerCase();
 
-      if (["apple","samsung","oneplus","xiaomi","vivo","oppo","motorola","iqoo","nothing","tecno","infinix"].includes(name)) {
-
-    // SHOW ONLY PHONES
-    filteredProducts = allProducts.filter(p =>
-        p.category === "mobile" &&
-        (
-          p.brand?.toLowerCase() === name ||
-          p.name.toLowerCase().includes(name)
-        ) &&
-        (p.type === "phone" || !p.type) // fallback if type is missing
-    );
-
-} else {
-
-    // OTHER SUBCATEGORIES (electronics, accessories, etc.)
-    filteredProducts = allProducts.filter(p =>
-        p.subcategory?.toLowerCase() === name ||
-        p.name.toLowerCase().includes(name) ||
-        p.keywords?.toLowerCase().includes(name)
-    );
-}
+      filteredProducts = allProducts.filter(p =>
+  p.subcategory?.toLowerCase().includes(name) ||
+  p.name.toLowerCase().includes(name) ||
+  p.keywords?.toLowerCase().includes(name)
+);
 
       currentPage = 1;
       renderPage();
