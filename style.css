@@ -818,22 +818,29 @@ body:not(.dark-mode) .toggle-btn {
   cursor: pointer;
 }
 
-/* ======= Mobile Tight Spacing ======= */
+/* ======= ULTRA TIGHT MOBILE SPACING ======= */
 @media (max-width: 768px) {
+
   .filters {
-    margin-bottom: 4px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .subfilters {
-    margin-bottom: 4px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .deals-grid {
-    margin-top: -2px;
+    margin-top: -6px;
     padding-top: 0;
   }
 
   .deal-card {
-    margin-top: 8px;
+    margin-top: 4px;
+  }
+
+  .deal-card h2 {
+    margin-top: 4px;
   }
 }
