@@ -22,35 +22,122 @@ let userFashionFilter = {
 const subCategories = {
   electronics: [
     { label: "📺 Home Entertainment", value: "home entertainment" },
-    { label: "🎧 Headphones & 🔊 Speakers", value: "headphones & speakers" },
+    { label: "🎧 Headphones & Speakers", value: "headphones speakers" },
     { label: "⌚ Smart Wearables", value: "smart wearables" },
-    { label: "💻 Computing & Laptops", value: "computing & laptops" },
+    { label: "💻 Computing & Laptops", value: "computing laptops" },
     { label: "🖨 Office Electronics", value: "office electronics" },
     { label: "🔌 Mobile Accessories", value: "mobile accessories" },
-    { label: "📸 Cameras & Drones", value: "cameras & drones" },
+    { label: "📸 Cameras & Drones", value: "cameras drones" },
     { label: "🏠 Smart Home", value: "smart home" },
-    { label: "⚡ Power & Energy", value: "power & energy" },
+    { label: "⚡ Power & Energy", value: "power energy" },
     { label: "🚗 Vehicle Electronics", value: "vehicle electronics" },
     { label: "🎮 Gaming Gear", value: "gaming gear" }
   ],
 
   mobile: [
-  { label: "Apple", value: "apple" },
-  { label: "Samsung", value: "samsung" },
-  { label: "OnePlus", value: "oneplus" },
-  { label: "Xiaomi", value: "xiaomi" },
-  { label: "Realme", value: "realme" },
-  { label: "Vivo", value: "vivo" },
-  { label: "Oppo", value: "oppo" },
-  { label: "Motorola", value: "motorola" },
-  { label: "Nothing", value: "nothing" },
-  { label: "IQOO", value: "iqoo" },
-  { label: "Google Pixel", value: "google pixel" },
-  { label: "Poco", value: "poco" },
-  { label: "Tecno", value: "tecno" },
-  { label: "Infinix", value: "infinix" },
-  { label: "Lava", value: "lava" }
-]
+  { label: "🍎 Apple", value: "apple" },
+  { label: "📱 Samsung", value: "samsung" },
+  { label: "➕ OnePlus", value: "oneplus" },
+  { label: "🇨🇳 Xiaomi", value: "xiaomi" },
+  { label: "⚡ Realme", value: "realme" },
+  { label: "📸 Vivo", value: "vivo" },
+  { label: "✨ Oppo", value: "oppo" },
+  { label: "📞 Motorola", value: "motorola" },
+  { label: "⭕ Nothing", value: "nothing" },
+  { label: "⚙️ IQOO", value: "iqoo" },
+  { label: "🧠 Google Pixel", value: "google pixel" },
+  { label: "🚀 Poco", value: "poco" },
+  { label: "📶 Tecno", value: "tecno" },
+  { label: "🔋 Infinix", value: "infinix" },
+  { label: "🔥 Lava", value: "lava" }
+],
+
+  grocery: [
+    { label: "🌾 Atta & Rice", value: "atta rice" },
+    { label: "🧴 Oil & Ghee", value: "oil ghee" },
+    { label: "🌶 Masala & Spices", value: "masala spices" },
+    { label: "🍟 Chips", value: "chips" },
+    { label: "🥜 Dry Fruits & Nuts", value: "dry fruits nuts" },
+    { label: "🍪 Cookies", value: "cookies" },
+    { label: "🥤 Soft Drinks", value: "soft drinks" },
+    { label: "🧃 Fruit Drinks", value: "fruit drinks" },
+    { label: "🍜 Noodles", value: "noodles" },
+    { label: "🍫 Chocolates & Sweets", value: "chocolates sweets" }
+  ],
+
+  beauty: [
+    { label: "💄 Makeup", value: "makeup" },
+    { label: "🧴 Skincare", value: "skincare" },
+    { label: "💇 Haircare", value: "haircare" },
+    { label: "🛁 Bath & Body", value: "bath body" },
+    { label: "🌸 Fragrances", value: "fragrances" },
+    { label: "🧔 Men’s Grooming", value: "mens grooming" }
+  ],
+
+  health: [
+    { label: "💊 Vitamins & Supplements", value: "vitamins supplements" },
+    { label: "🩺 Medical Supplies", value: "medical supplies" },
+    { label: "🦷 Oral Care", value: "oral care" },
+    { label: "🧼 Skin & Body Care", value: "skin body care" },
+    { label: "💇 Hair Care", value: "hair care" },
+    { label: "🚺 Feminine Care", value: "feminine care" },
+    { label: "👶 Baby Care", value: "baby care" },
+    { label: "🧔 Personal Grooming", value: "personal grooming" }
+  ],
+
+  accessories: [
+    { label: "👜 Bags & Wallets", value: "bags wallets" },
+    { label: "💍 Jewellery", value: "jewellery" },
+    { label: "⌚ Watches", value: "watches" },
+    { label: "🕶 Sunglasses", value: "sunglasses" },
+    { label: "🧢 Caps & Hats", value: "caps hats" },
+    { label: "💼 Travel Accessories", value: "travel accessories" }
+  ],
+
+  toys: [
+    { label: "🎓 Learning Toys", value: "learning toys" },
+    { label: "🏸 Sports Toys", value: "sports toys" },
+    { label: "🎲 Indoor Games", value: "indoor games" },
+    { label: "🧸 Soft Toys", value: "soft toys" },
+    { label: "🧱 Building Blocks", value: "building blocks" },
+    { label: "🚗 RC Toys", value: "rc toys" },
+    { label: "🦸 Action Figures", value: "action figures" }
+  ],
+
+  sports: [
+    { label: "🏋️ Fitness Equipment", value: "fitness equipment" },
+    { label: "🥅 Sports Gear", value: "sports gear" },
+    { label: "👟 Athletic Footwear", value: "athletic footwear" },
+    { label: "🎒 Fitness Accessories", value: "fitness accessories" },
+    { label: "🥤 Nutrition & Supplements", value: "nutrition supplements" }
+  ],
+
+  baby: [
+    { label: "🍼 Feeding Essentials", value: "feeding essentials" },
+    { label: "🧴 Bath & Skincare", value: "bath skincare" },
+    { label: "🧸 Baby Toys", value: "baby toys" },
+    { label: "👶 Baby Clothing", value: "baby clothing" },
+    { label: "🚼 Baby Gear", value: "baby gear" },
+    { label: "🧼 Health & Safety", value: "baby health safety" }
+  ],
+
+  home: [
+    { label: "🍳 Kitchen Tools", value: "kitchen tools" },
+    { label: "🍽 Cookware", value: "cookware serveware" },
+    { label: "🔌 Appliances", value: "kitchen appliances" },
+    { label: "🧺 Home Organization", value: "home organization" },
+    { label: "🖼 Home Decor", value: "home decor" },
+    { label: "🧹 Cleaning Supplies", value: "cleaning supplies" },
+    { label: "🛏 Bedding", value: "bedding furnishing" }
+  ],
+
+  books: [
+    { label: "📘 Fiction", value: "fiction" },
+    { label: "📗 Non Fiction", value: "non fiction" },
+    { label: "📙 Children", value: "children books" },
+    { label: "📚 Academic", value: "academic" },
+    { label: "💡 Self Help", value: "self help" }
+  ]
 };
 
 const fashionFilters = {
