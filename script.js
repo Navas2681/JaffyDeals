@@ -74,7 +74,7 @@ const subCategories = {
     { label: "🧔 Men’s Grooming", value: "mens grooming" }
   ],
 
-  health: [
+  healthpersonalcare: [
     { label: "💊 Vitamins & Supplements", value: "vitamins supplements" },
     { label: "🩺 Medical Supplies", value: "medical supplies" },
     { label: "🦷 Oral Care", value: "oral care" },
@@ -94,7 +94,7 @@ const subCategories = {
     { label: "💼 Travel Accessories", value: "travel accessories" }
   ],
 
-  toys: [
+  toysgames: [
     { label: "🎓 Learning Toys", value: "learning toys" },
     { label: "🏸 Sports Toys", value: "sports toys" },
     { label: "🎲 Indoor Games", value: "indoor games" },
@@ -104,7 +104,7 @@ const subCategories = {
     { label: "🦸 Action Figures", value: "action figures" }
   ],
 
-  sports: [
+  sportsfitness: [
     { label: "🏋️ Fitness Equipment", value: "fitness equipment" },
     { label: "🥅 Sports Gear", value: "sports gear" },
     { label: "👟 Athletic Footwear", value: "athletic footwear" },
@@ -121,7 +121,7 @@ const subCategories = {
     { label: "🧼 Health & Safety", value: "baby health safety" }
   ],
 
-  home: [
+  homekitchen: [
     { label: "🍳 Kitchen Tools", value: "kitchen tools" },
     { label: "🍽 Cookware", value: "cookware serveware" },
     { label: "🔌 Appliances", value: "kitchen appliances" },
