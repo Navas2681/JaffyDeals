@@ -1454,7 +1454,7 @@
     "mrp": "599",
     "discount": "71% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys, fitness equipment",
+    "subcategory": "sports toys, fitness accessories",
     "image": "https://m.media-amazon.com/images/I/71sjbMNKwnL._SX569_.jpg",
     "link": "https://amzn.to/4qz2w0m",
     "rating": 4.1,
@@ -1467,7 +1467,7 @@
     "mrp": "299",
     "discount": "69% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys, fitness equipment",
+    "subcategory": "sports toys, fitness accessories",
     "image": "https://m.media-amazon.com/images/I/617-FZtUqUL._SX569_.jpg",
     "link": "https://amzn.to/4qvff3Y",
     "rating": 4.1,
@@ -1480,7 +1480,7 @@
     "mrp": "999",
     "discount": "75% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys, fitness equipment",
+    "subcategory": "sports toys, fitness accessories",
     "image": "https://m.media-amazon.com/images/I/71unDV7tXIL._SX569_.jpg",
     "link": "https://amzn.to/4pS0APt",
     "rating": 4.4,
@@ -1823,6 +1823,58 @@
     "link": "https://amzn.to/4b5AHYD",
     "rating": 4.3,
     "keywords": "wrist wraps, gym wrist band, wrist support band, workout wrist band, weightlifting wrist wraps, gym straps, fitness wrist protector, wrist guard for gym, powerlifting wrist support, adjustable wrist wraps, training wrist band, gym accessories for men, gym accessories for women, strength wrist support, joint support wrist wraps"
+  },
+
+  {
+    "name": "Dr. Morepen BG-03 Blood Glucose Test Strips, Pack of 25(No Glucometer)",
+    "price": "348",
+    "mrp": "465",
+    "discount": "25% OFF",
+    "category": "healthpersonalcare",
+    "subcategory": "medical supplies",
+    "image": "https://m.media-amazon.com/images/I/61j38XtUhBL._SY450_PIbundle-25,TopRight,0,0_AA450SH20_.jpg",
+    "link": "https://amzn.to/4qVXsmg",
+    "rating": 4.3,
+    "keywords": "blood glucose test strips, glucometer strips, diabetes test strips, sugar level test strips, Dr Morepen test strips, BG-03 strips, glucose monitoring strips, diabetic supplies, glucometer refill strips, home sugar test kit strips, blood sugar testing, diabetes home test, test strip pack, diabetic care accessories, compatible test strips"
+  },
+
+  {
+    "name": "Lifelong LLYM92 Yoga mat for Women & Men EVA Material 4mm Grey Anti Slip for Gym Workout",
+    "price": "199",
+    "mrp": "599",
+    "discount": "67% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/61uds0HD24L._SX569_.jpg",
+    "link": "https://amzn.to/49HOwtS",
+    "rating": 4.0,
+    "keywords": "yoga mat, exercise mat, fitness mat, workout mat, anti-slip yoga mat, EVA yoga mat, gym mat, pilates mat, home workout mat, meditation mat, stretch mat, floor exercise mat, lightweight yoga mat, women yoga mat, men yoga mat, portable yoga mat, 4mm yoga mat"
+  },
+
+  {
+    "name": "Lifelong Yoga Mat for Men & Women | 5mm Thick TPE Cushioning | Non-Toxic & Sweat-Resistant | Lightweight & Portable with Carry Bag | Home & Studio Workout Mat | Made in India (Maroon)",
+    "price": "479",
+    "mrp": "3,299",
+    "discount": "85% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/71mInNZP1UL._SX569_.jpg",
+    "link": "https://amzn.to/4sQv1Id",
+    "rating": 4.1,
+    "keywords": "yoga mat, TPE yoga mat, thick yoga mat, 5mm yoga mat, cushioned yoga mat, non-slip yoga mat, non-toxic yoga mat, sweat resistant yoga mat, gym workout mat, exercise mat, pilates mat, home workout mat, studio yoga mat, portable yoga mat, yoga mat with carry bag, men yoga mat, women yoga mat, premium yoga mat"
+  },
+
+  {
+    "name": "Boldfit Yoga Mats For Women Yoga Mat For Men Exercise Mat For Home Gym Mat Anti Slip YogaMate Workout Mat YogaMat For Kids Yoga Mate Gym Mats",
+    "price": "399",
+    "mrp": "---",
+    "discount": "--% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/51uTBV+SwHL._SX569_.jpg",
+    "link": "https://amzn.to/4a2GwF8",
+    "rating": 4.0,
+    "keywords": "yoga mat, exercise mat, anti slip yoga mat, gym mat, workout mat, home workout mat, fitness mat, pilates mat, stretching mat, meditation mat, non slip mat, lightweight yoga mat, portable yoga mat, men yoga mat, women yoga mat, kids yoga mat, yoga mat for home, yoga mat for gym, boldfit yoga mat"
   }
 
 
