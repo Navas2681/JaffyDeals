@@ -1402,7 +1402,7 @@
     "mrp": "749",
     "discount": "40% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/71JLB9Tod7L._SX569_.jpg",
     "link": "https://amzn.to/4qCA1Ps",
     "rating": 4.0,
@@ -1415,7 +1415,7 @@
     "mrp": "726",
     "discount": "60% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/61RpRYFb2wL._SX569_.jpg",
     "link": "https://amzn.to/3YKrygN",
     "rating": 3.8,
@@ -1428,7 +1428,7 @@
     "mrp": "949",
     "discount": "60% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/81kAYhvm-kL._SX569_.jpg",
     "link": "https://amzn.to/49Q59nr",
     "rating": 4.0,
@@ -1441,7 +1441,7 @@
     "mrp": "1,930",
     "discount": "38% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/71jjiWS7jyL._SX569_.jpg",
     "link": "https://amzn.to/4sQFZxm",
     "rating": 4.2,
@@ -1454,7 +1454,7 @@
     "mrp": "599",
     "discount": "71% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, fitness equipment",
     "image": "https://m.media-amazon.com/images/I/71sjbMNKwnL._SX569_.jpg",
     "link": "https://amzn.to/4qz2w0m",
     "rating": 4.1,
@@ -1467,7 +1467,7 @@
     "mrp": "299",
     "discount": "69% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, fitness equipment",
     "image": "https://m.media-amazon.com/images/I/617-FZtUqUL._SX569_.jpg",
     "link": "https://amzn.to/4qvff3Y",
     "rating": 4.1,
@@ -1480,7 +1480,7 @@
     "mrp": "999",
     "discount": "75% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, fitness equipment",
     "image": "https://m.media-amazon.com/images/I/71unDV7tXIL._SX569_.jpg",
     "link": "https://amzn.to/4pS0APt",
     "rating": 4.4,
@@ -1493,7 +1493,7 @@
     "mrp": "2,499",
     "discount": "62% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/615Ol2olt1L._SX569_.jpg",
     "link": "https://amzn.to/4bEtizB",
     "rating": 4.3,
@@ -1506,7 +1506,7 @@
     "mrp": "1,499",
     "discount": "81% OFF",
     "category": "toysgames",
-    "subcategory": "sports toys",
+    "subcategory": "sports toys, sports gear",
     "image": "https://m.media-amazon.com/images/I/41gCu3OQ5rL._SX569_.jpg",
     "link": "https://amzn.to/4a4xaso",
     "rating": 4.0,
@@ -1680,8 +1680,150 @@
     "link": "https://amzn.to/49Fqhhn",
     "rating": 4.2,
     "keywords": "magnetic tiles, magnetic building blocks, stem building toy, kids stem toy, educational building set, 3d magnetic tiles, marble run toy, stem learning toy, creative building blocks, construction tiles set, magnet blocks for kids, preschool learning toy, stem gift for kids, open ended play toy, 49 pcs magnetic set"
-  }
+  },
 
+  {
+    "name": "Lifelong PVC Hex Dumbbells Pack of 2 (5kg*2) Black Color for Home Gym Equipment Fitness Barbell|Gym Exercise|Home Workout, Gym Dumbbells|Dumbbells Weights for Men & Women (6 Months Warranty)",
+    "price": "399",
+    "mrp": "1,000",
+    "discount": "60% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness equipment",
+    "image": "https://m.media-amazon.com/images/I/6182na8zwFL._SX569_.jpg",
+    "link": "https://amzn.to/4pSZMKb",
+    "rating": 4.0,
+    "keywords": "dumbbells set, home gym dumbbells, hex dumbbells, pvc dumbbells, 5kg dumbbells, strength training weights, workout weights, fitness dumbbells, gym equipment home, weight training set, muscle building weights, exercise dumbbells, dumbbells for men, dumbbells for women, barbell weights"
+  },
+
+  {
+    "name": "Lifelong PVC Hex Fixed Dumbbells Pack of 2 (1kg*2) Red Color for Home Gym Equipment Fitness Barbell|Gym Exercise|Home Workout, Gym Dumbbells Weights for Men & Women (6 Months Warranty)",
+    "price": "129",
+    "mrp": "200",
+    "discount": "36% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness equipment",
+    "image": "https://m.media-amazon.com/images/I/61Eq88ACOkL._SX569_.jpg",
+    "link": "https://amzn.to/49V9dTs",
+    "rating": 4.0,
+    "keywords": "1kg dumbbells, mini dumbbells, light dumbbells, pvc dumbbells, hex dumbbells, home workout weights, fitness weights, gym weights, dumbbells for beginners, aerobic weights, exercise dumbbells, women workout weights, strength training light weights, dumbbells for men, dumbbells for women"
+  },
+
+  {
+    "name": "Bodyfit Total Gym Kit Combo 20 Kg Weight Plates Dumbbell Set Home Gym Set (Multicolour, 1 X 5 Feet, 1 X 3 Feet),Exercise Set, Gym Accessories.",
+    "price": "1,292",
+    "mrp": "4,490",
+    "discount": "71% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness equipment",
+    "image": "https://m.media-amazon.com/images/I/71-MRQrjDKL._SX569_.jpg",
+    "link": "https://amzn.to/49IpDy7",
+    "rating": 3.8,
+    "keywords": "20kg gym kit, home gym dumbbell set, weight plates set, adjustable dumbbells, fitness gym set, workout equipment kit, bodybuilding kit, strength training weights, dumbbell combo set, gym accessories set, home workout kit, barbell plates set, dumbbells for men, dumbbells for women, exercise weight set"
+  },
+
+  {
+    "name": "Lifelong Adjustable Pull-Up Bar for Home Gym | No Screws Hanging Bar, Adjustable Length (74-97cm), Doorway Chin-Up Bar, Gym Equipment for Men Workout, Strength Training, Weight Capacity (200kg)",
+    "price": "899",
+    "mrp": "2,999",
+    "discount": "70% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness equipment",
+    "image": "https://m.media-amazon.com/images/I/81An-qPd0UL._SX569_.jpg",
+    "link": "https://amzn.to/3Nty88V",
+    "rating": 4.1,
+    "keywords": "pull up bar, doorway pull up bar, no screw pull up bar, adjustable pull up bar, chin up bar, home gym bar, wall pull up bar, upper body workout bar, strength training bar, fitness pull up bar, gym equipment home, bodyweight training bar, doorway exercise bar, men workout bar, 200kg pull up bar"
+  },
+
+  {
+    "name": "ASIAN Men Lace Up Running Shoes",
+    "price": "569",
+    "mrp": "999",
+    "discount": "43% OFF",
+    "category": "sportsfitness",
+    "subcategory": "athletic footwear",
+    "image": "https://m.media-amazon.com/images/I/61U70iqOAIL._SY575_.jpg",
+    "link": "https://amzn.to/4qxMW5a",
+    "rating": 4.0,
+    "keywords": "running shoes, sports shoes, men running shoes, lace up shoes, gym shoes, walking shoes, workout shoes, jogging shoes, lightweight shoes, breathable shoes, training shoes, outdoor running shoes, cushioned running shoes, athletic shoes for men, daily wear sports shoes"
+  },
+
+  {
+    "name": "Fashnex Waist Belt Made of Neoprene for Women & Men for Tummy Exercise",
+    "price": "824",
+    "mrp": "1,999",
+    "discount": "56% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/61UkXKsUs8S._SX569_.jpg",
+    "link": "https://amzn.to/4bHVEsI",
+    "rating": 4.5,
+    "keywords": "waist belt, tummy trimmer belt, sweat belt, waist trainer belt, neoprene waist belt, fat burner belt, abdomen belt, weight loss belt, fitness waist belt, gym tummy belt, slimming belt, waist sweat belt, workout waist band, stomach fat belt, men women waist belt"
+  },
+
+  {
+    "name": "XTRIM Durafit Unisex Stylish Ankle Straps with Metal D-Rings for Cable Machine, Kickbacks and Glutes Workouts, Adjustable Ankle Straps, Curls & Hip Abductors with Padded Neoprene Support (Red)",
+    "price": "289",
+    "mrp": "899",
+    "discount": "68% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/71Wvw+lqJTL._SX569_.jpg",
+    "link": "https://amzn.to/4a3UYga",
+    "rating": 3.9,
+    "keywords": "ankle straps, cable machine ankle straps, gym ankle straps, workout ankle straps, glute kickback straps, hip abductor straps, leg workout straps, padded ankle straps, adjustable ankle straps, fitness cable straps, gym accessories, strength training straps, unisex ankle straps, home gym straps, cable attachment straps"
+  },
+
+  {
+    "name": "XTRIM xMacho Gym Gloves with Wrist Support Strap for Men & Women Workout, Half-Finger Hand Gloves for Weightlifting, Wrist Band for Dumbbell, Exercise & Gym Workout (L, Fits 8-8.5 Inches, Blue-Black)",
+    "price": "479",
+    "mrp": "888",
+    "discount": "46% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/91wwVR0JEiL._SX569_.jpg",
+    "link": "https://amzn.to/3LY4icd",
+    "rating": 4.1,
+    "keywords": "gym gloves, weightlifting gloves, wrist support gloves, workout gloves, half finger gloves, fitness gloves, dumbbell gloves, lifting gloves, training gloves, gym hand gloves, strength training gloves, wrist wrap gloves, men gym gloves, women gym gloves, crossfit gloves"
+  },
+
+  {
+    "name": "Aurion Premium Genuine Leather Wrist Strap for Gym - 1.5 Width Band, 19 Length, Lifting Straps, Wrist Support for Gym Workout, Suitable for Men and Women",
+    "price": "426",
+    "mrp": "999",
+    "discount": "57% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/71+rDljh2eL._SX569_.jpg",
+    "link": "https://amzn.to/4qPtz7T",
+    "rating": 3.9,
+    "keywords": "lifting straps, wrist straps, gym wrist support, leather lifting straps, weightlifting straps, powerlifting straps, deadlift straps, training straps, strength training straps, grip support straps, gym accessories, workout straps, hand grip straps, men gym straps, women gym straps"
+  },
+
+  {
+    "name": "Nivia Wrist Support for Gym Wrist Band for Gym Workout Wrist Supporter for Gym Straps for Men Hand Band Strap for Man Wrists Support wrap for Man Workouts Accessories for Women, Black (1 pair)",
+    "price": "149",
+    "mrp": "249",
+    "discount": "40% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/51Ml+0Kx5YL._SX569_.jpg",
+    "link": "https://amzn.to/49GdviF",
+    "rating": 4.2,
+    "keywords": "wrist support, wrist wraps, gym wrist band, gym wrist support, workout wrist support, weightlifting wrist wraps, strength training wrist band, wrist brace for gym, fitness wrist band, powerlifting wrist wraps, wrist stabilizer band, men gym wrist band, women gym wrist band, adjustable wrist strap, joint support wrist band"
+  },
+
+  {
+    "name": "Boldfit Wrist Band for Gym Workout Wrist Support for Gym Straps for Men Hand Band Strap for Man Accessories for Men Workout Wrists Supporter wrap for Man Workouts Accessories for Women Hand Wraps",
+    "price": "179",
+    "mrp": "399",
+    "discount": "53% OFF",
+    "category": "sportsfitness",
+    "subcategory": "fitness accessories",
+    "image": "https://m.media-amazon.com/images/I/71rnjOkkJZL._SX569_.jpg",
+    "link": "https://amzn.to/4b5AHYD",
+    "rating": 4.3,
+    "keywords": "wrist wraps, gym wrist band, wrist support band, workout wrist band, weightlifting wrist wraps, gym straps, fitness wrist protector, wrist guard for gym, powerlifting wrist support, adjustable wrist wraps, training wrist band, gym accessories for men, gym accessories for women, strength wrist support, joint support wrist wraps"
+  }
 
 
   
