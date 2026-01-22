@@ -817,3 +817,19 @@ body:not(.dark-mode) .toggle-btn {
   color: white;
   cursor: pointer;
 }
+
+/* new adding */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 
+               "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.category-btn {
+  white-space: nowrap;
+}
+
+.category-btn {
+  min-width: 140px;
+  justify-content: center;
+}
