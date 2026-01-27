@@ -253,20 +253,14 @@ function attachSubFilterEvents() {
 }
 
 fetch("products.json")
-  .then(res => {
-    if (!res.ok) throw new Error("products.json not found");
-    return res.json();
-  })
+  .then(res => res.json())
   .then(products => {
     allProducts = products.reverse();
     filteredProducts = [...allProducts];
     renderPage();
     renderPagination();
     setupFilters();
-  })
-  .catch(err => {
-    console.error("Product load failed:", err);
-  });
+});
 
 function getPerPage() {
   if (window.innerWidth < 768) return 12;
