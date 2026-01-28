@@ -818,11 +818,11 @@ body:not(.dark-mode) .toggle-btn {
   cursor: pointer;
 }
 
-/* Banner Slider */
+/* ===== Banner Slider ===== */
 .banner-slider {
   width: 100%;
   max-width: 1200px;
-  margin: 14px auto;
+  margin: 16px auto;
   overflow: hidden;
   border-radius: 16px;
   position: relative;
@@ -830,28 +830,29 @@ body:not(.dark-mode) .toggle-btn {
 
 .slides {
   display: flex;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
   min-width: 100%;
+  display: block;
 }
 
 .slide img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
+  object-fit: cover;
 }
 
 /* Dots */
 .dots {
   position: absolute;
-  bottom: 10px;
-  width: 100%;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .dot {
@@ -859,8 +860,16 @@ body:not(.dark-mode) .toggle-btn {
   height: 8px;
   background: rgba(255,255,255,0.5);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .dot.active {
   background: #fff;
+}
+
+/* Mobile fix (banner not too tall) */
+@media (max-width: 768px) {
+  .banner-slider {
+    border-radius: 12px;
+  }
 }

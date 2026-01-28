@@ -30,20 +30,14 @@
 </div>
 </header>
 
-<!-- Swipe Banner Start -->
+<!-- Banner Slider -->
 <div class="banner-slider">
-
   <div class="slides">
-    <a href="https://clnk.in/y7ij" class="slide active">
-      <img src="assets/banner.png.jpeg" alt="Fyva Women Dresses Sale">
+    <a href="https://clnk.in/y7ij" class="slide">
+      <img src="assets/banner.png.jpeg" alt="Fyva Women Fashion">
     </a>
-
-    <a href="FYVA_LINK_2" class="slide">
-      <img src="banner2.jpg" alt="Fyva Fashion Offers">
-    </a>
-
     <a href="https://clnk.in/y7il" class="slide">
-      <img src="assets/banner.png2.jpeg" alt="Fyva Trending Styles">
+      <img src="assets/banner.png2.jpeg" alt="Fyva Fashion">
     </a>
   </div>
 
@@ -52,9 +46,7 @@
     <span class="dot"></span>
     <span class="dot"></span>
   </div>
-
 </div>
-<!-- Swipe Banner End -->
 
 <div class="filters">
   <button class="filter-btn active" data-filter="all">✨ All</button>
@@ -122,47 +114,28 @@
   </div>
 
 </footer>
+</footer>
+
+<!-- Image Viewer Overlay -->
+<div id="img-viewer" class="img-viewer">
+  <span class="close-btn">✖</span>
+  <img id="viewer-img" src="" alt="">
+</div>
 
 <script src="script.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const slides = document.querySelector(".slides");
-  const dots = document.querySelectorAll(".dot");
-
-  // Safety check (VERY IMPORTANT)
-  if (!slides || dots.length === 0) return;
-
-  let index = 0;
-
-  function showSlide(i) {
-    slides.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(d => d.classList.remove("active"));
-    dots[i].classList.add("active");
-  }
-
-  setInterval(() => {
-    index = (index + 1) % dots.length;
-    showSlide(index);
-  }, 4000);
-
-  let startX = 0;
-
-  slides.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  slides.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-
-    if (startX - endX > 50) index = (index + 1) % dots.length;
-    if (endX - startX > 50) index = (index - 1 + dots.length) % dots.length;
-
-    showSlide(index);
-  });
-
-});
+<script type="text/javascript">
+  var cId = 259681;
+  (function(d, t) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = (document.location.protocol === 'https:' 
+      ? 'https://cdn.cuelinks.com/js/' 
+      : 'http://cdn.cuelinks.com/js/') + 'cuelinks.js';
+    document.getElementsByTagName('body')[0].appendChild(s);
+  })();
 </script>
+
 </body>
 </html>

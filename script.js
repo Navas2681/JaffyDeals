@@ -559,3 +559,48 @@ subFiltersBox.addEventListener('mousemove', (e) => {
 });
 
 // Done 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelector(".slides");
+  const dots = document.querySelectorAll(".dot");
+
+  if (!slides || dots.length === 0) return;
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[i].classList.add("active");
+  }
+
+  // Auto slide
+  setInterval(() => {
+    index = (index + 1) % dots.length;
+    showSlide(index);
+  }, 4000);
+
+  // Dot click
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      showSlide(index);
+    });
+  });
+
+  // Swipe support (mobile)
+  let startX = 0;
+
+  slides.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slides.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) index = (index + 1) % dots.length;
+    if (endX - startX > 50) index = (index - 1 + dots.length) % dots.length;
+
+    showSlide(index);
+  });
+});
