@@ -817,3 +817,50 @@ body:not(.dark-mode) .toggle-btn {
   color: white;
   cursor: pointer;
 }
+
+/* Banner Slider */
+.banner-slider {
+  width: 100%;
+  max-width: 1200px;
+  margin: 14px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #fff;
+}
