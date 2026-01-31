@@ -873,3 +873,139 @@ body:not(.dark-mode) .toggle-btn {
     border-radius: 12px;
   }
 }
+
+/* Top brand bar */
+.top-brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--bg-color, #121212);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Brand name */
+.brand-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Menu + icons */
+.menu-btn,
+.icon-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Right icons */
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111;
+}
+
+/* TOP BRAND BAR */
+.top-brand-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px 14px;
+  color: #fff;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* BRAND NAME CENTER */
+.brand-name {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffcc00;
+}
+
+/* RIGHT ICONS */
+.top-actions {
+  display: flex;
+  gap: 1150px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* SEARCH BAR */
+.search-container {
+  padding: 8px 14px 12px;
+}
+
+.top-brand-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  background: #111;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 14px;
+  z-index: 1000;
+}
+
+.brand-name {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffcc00;
+  letter-spacing: 1px;
+}
+
+.menu-btn,
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header-scroll {
+  margin-top: 56px;
+}
+
+@media (min-width: 768px) {
+  .brand-name {
+    font-size: 24px;
+  }
+}
+
