@@ -604,3 +604,47 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(index);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const profileBtn = document.getElementById("profileBtn");
+  const loginModal = document.getElementById("loginModal");
+  const closeLogin = document.getElementById("closeLogin");
+  const googleLogin = document.getElementById("googleLogin");
+
+  if (!profileBtn || !loginModal) {
+    console.error("Profile or Login modal not found");
+    return;
+  }
+
+  // Open modal
+  profileBtn.addEventListener("click", () => {
+    loginModal.style.display = "flex";
+  });
+
+  // Close modal
+  closeLogin.addEventListener("click", () => {
+    loginModal.style.display = "none";
+  });
+
+  // Fake Google Login (frontend demo)
+  googleLogin.addEventListener("click", () => {
+    const user = {
+      name: "Navas",
+      photo: "https://i.pravatar.cc/150?img=12"
+    };
+
+    localStorage.setItem("jaffyUser", JSON.stringify(user));
+    loginModal.style.display = "none";
+    showUser();
+  });
+
+  function showUser() {
+    const user = JSON.parse(localStorage.getItem("jaffyUser"));
+    if (!user) return;
+
+    profileBtn.innerHTML = `<img src="${user.photo}" class="profile-img">`;
+  }
+
+  showUser();
+});
