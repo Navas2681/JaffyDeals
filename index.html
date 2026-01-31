@@ -139,16 +139,17 @@
 </div>
 
 <script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
 
 <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
     <h3>Login / Register</h3>
 
-    <button class="google-btn" id="googleLogin">
-      <img src="https://developers.google.com/identity/images/g-logo.png">
-      Continue with Google
-    </button>
+    <button class="google-btn" onclick="googleLogin()">
+  <img src="https://developers.google.com/identity/images/g-logo.png">
+  Continue with Google
+  </button>
 
     <button class="close-btn" id="closeLogin">Close</button>
   </div>
