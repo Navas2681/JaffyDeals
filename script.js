@@ -284,15 +284,16 @@ function renderPage() {
       <div class="img-wrap">
   <img src="${p.image}" class="product-img" alt="${p.name}">
 
-  <button class="fav-btn ${cart.some(item => item.link === p.link) ? 'active' : ''}"
-  onclick='handleFavClick(this, {
-    name: "${p.name}",
-    price: "${p.price}",
-    image: "${p.image}",
-    link: "${p.link}"
-  })'>
-  ❤️
+  <button class="fav-btn ${isInCart(p.link) ? 'active' : ''}"
+onclick='toggleCart(this, {
+  name: "${p.name}",
+  price: "${p.price}",
+  image: "${p.image}",
+  link: "${p.link}"
+})'>
+❤️
 </button>
+
 
 
 </div>
@@ -634,33 +635,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ================= CART LOGIC =================
+// ================= CART LOGIC (FINAL) =================
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-function addToCart(product) {
-  const exists = cart.some(item => item.link === product.link);
-  if (exists) return;
+function isInCart(link) {
+  const cart = getCart();
+  return cart.some(item => item.link === link);
+}
 
-  cart.push(product);
+function toggleCart(btn, product) {
+  let cart = getCart();
+
+  const index = cart.findIndex(item => item.link === product.link);
+
+  if (index === -1) {
+    cart.push(product);
+    btn.classList.add("active");
+  } else {
+    cart.splice(index, 1);
+    btn.classList.remove("active");
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
 }
 
-function handleFavClick(btn, product) {
-  addToCart(product);
-  btn.classList.add("active");
-}
-
-
-
-  // ❤️ turn red
-  btn.classList.add("active");
-
-
-
 function updateCartCount() {
   const countEl = document.getElementById("cartCount");
+  const cart = getCart();
   if (countEl) countEl.innerText = cart.length;
 }
 
