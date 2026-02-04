@@ -653,14 +653,20 @@ function toggleCart(btn, product) {
 
   if (index === -1) {
     cart.push(product);
-    btn.classList.add("active");
   } else {
     cart.splice(index, 1);
-    btn.classList.remove("active");
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
+
+  // 🔥 MOBILE FORCE REPAINT
+  btn.classList.toggle("active", index === -1);
+
+  // 🔥 RE-RENDER ONLY IF NEEDED
+  requestAnimationFrame(() => {
+    renderPage();
+  });
 }
 
 function updateCartCount() {
