@@ -1074,4 +1074,28 @@ header {
   }
 }
 
+/* MOBILE HEADER FIX */
+@media (max-width: 768px) {
+  header {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .cart-icon {
+    display: flex !important;
+    align-items: center;
+    font-size: 20px;
+    padding: 6px;
+  }
+
+  #cartCount {
+    font-size: 12px;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+}
+
+
+
 
