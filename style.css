@@ -1045,5 +1045,33 @@ header {
   color: white;
 }
 
+/* FORCE CART ICON ON MOBILE */
+.cart-icon {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* mobile header fix */
+@media (max-width: 768px) {
+  .cart-icon {
+    position: relative;
+    margin-right: 10px;
+  }
+}
+
+/* Cart page mobile fix */
+@media (max-width: 768px) {
+  #cartItems {
+    padding: 12px;
+  }
+
+  #cartItems .deal-card {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
 
 
