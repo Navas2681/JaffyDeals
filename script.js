@@ -281,8 +281,23 @@ function renderPage() {
          data-category="${p.category?.toLowerCase() || ''}"
          data-keywords="${p.keywords?.toLowerCase() || ''}">
          
-      <img src="${p.image}" class="product-img" alt="${p.name}">
-      <h2>${p.name}</h2>
+      <div class="img-wrap">
+  <img src="${p.image}" class="product-img" alt="${p.name}">
+
+  <button class="fav-btn ${cart.some(item => item.link === p.link) ? 'active' : ''}"
+  onclick='handleFavClick(this, {
+    name: "${p.name}",
+    price: "${p.price}",
+    image: "${p.image}",
+    link: "${p.link}"
+  })'>
+  ❤️
+</button>
+
+
+</div>
+
+      <h2 class="product-title">${p.name}</h2>
 
       <div class="rating">
         ${generateStars(p.rating)}
@@ -618,3 +633,39 @@ document.addEventListener("DOMContentLoaded", () => {
     loginModal.style.display = "none";
   });
 });
+
+// ================= CART LOGIC =================
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(product) {
+  const exists = cart.some(item => item.link === product.link);
+  if (exists) return;
+
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function handleFavClick(btn, product) {
+  addToCart(product);
+  btn.classList.add("active");
+}
+
+
+
+  // ❤️ turn red
+  btn.classList.add("active");
+
+
+
+function updateCartCount() {
+  const countEl = document.getElementById("cartCount");
+  if (countEl) countEl.innerText = cart.length;
+}
+
+function openCart() {
+  window.location.href = "cart.html";
+}
+
+updateCartCount();
