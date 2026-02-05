@@ -683,5 +683,45 @@ updateCartCount();
 
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuOverlay").classList.toggle("active");
 }
+
+
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.remove("active");
+  });
+});
+
+// ===== FAKE LOGIN USER NAME =====
+document.addEventListener("DOMContentLoaded", () => {
+  const userName = localStorage.getItem("userName");
+
+  const nameEl = document.getElementById("menuUserName");
+  const avatarEl = document.getElementById("userAvatar");
+
+  if (userName) {
+    if (nameEl) nameEl.innerText = "Hello, " + userName;
+    if (avatarEl) avatarEl.innerText = userName.charAt(0);
+  }
+});
+
+function changeUserName() {
+  const currentName = localStorage.getItem("userName") || "";
+  const newName = prompt("Enter your name:", currentName);
+
+  if (!newName) return;
+
+  localStorage.setItem("userName", newName);
+
+  const nameEl = document.getElementById("menuUserName");
+  const avatarEl = document.getElementById("userAvatar");
+
+  if (nameEl) nameEl.innerText = "Hello, " + newName;
+  if (avatarEl) avatarEl.innerText = newName.charAt(0);
+
+  alert("Name updated ✅");
+}
+
+
 

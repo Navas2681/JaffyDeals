@@ -15,8 +15,21 @@
 <div class="top-brand-bar">
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <!-- MOBILE MENU -->
+  <!-- MENU OVERLAY -->
+<div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDE MENU -->
 <div id="mobileMenu" class="mobile-menu">
+
+  <a href="login.html" class="menu-profile">
+  <div class="avatar-circle" id="userAvatar">G</div>
+  <p id="menuUserName">Hello, Guest</p>
+</a>
+
+<button class="change-name-btn" onclick="changeUserName()">
+  ✏️ Change Name
+</button>
+
   <a href="index.html">🏠 Home</a>
   <a href="#deals">🔥 Deals</a>
   <a href="#coupons">🏷 Coupons</a>
@@ -24,6 +37,7 @@
   <a href="cart.html">🛒 My Cart</a>
   <a href="#contact">📞 Contact</a>
 </div>
+
 
 
   <div class="brand-name">JaffyDeals</div>
