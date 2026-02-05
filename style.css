@@ -1302,5 +1302,79 @@ header nav a:hover {
   cursor: pointer;
 }
 
+.menu-auth-btn {
+  width: 90%;
+  margin: 20px auto;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menu-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-footer {
+  padding: 16px;
+  border-top: 1px solid #333;
+}
+
+.menu-auth-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: #ffcc00;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+
+  width: 100%;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 
 

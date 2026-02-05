@@ -21,17 +21,32 @@
 <!-- SIDE MENU -->
 <div id="mobileMenu" class="mobile-menu">
 
-  <a href="login.html" class="menu-profile">
-  <img id="userAvatar" src="default-avatar.png" alt="User Avatar">
-  <p id="menuUserName">Hello, Guest</p>
-</a>
+<button class="menu-close-btn" onclick="toggleMenu()">✖</button>
 
-  <a href="index.html">🏠 Home</a>
-  <a href="#deals">🔥 Deals</a>
-  <a href="#coupons">🏷 Coupons</a>
-  <a href="#categories">📂 Categories</a>
-  <a href="cart.html">🛒 My Cart</a>
-  <a href="#contact">📞 Contact</a>
+  <!-- MENU CONTENT (TOP) -->
+  <div class="menu-content">
+
+    <a href="login.html" class="menu-profile">
+      <img id="userAvatar" src="default-avatar.png" alt="User Avatar">
+      <p id="menuUserName">Hello, Guest</p>
+    </a>
+
+    <a href="index.html">🏠 Home</a>
+    <a href="#deals">🔥 Deals</a>
+    <a href="#coupons">🏷 Coupons</a>
+    <a href="#categories">📂 Categories</a>
+    <a href="cart.html">🛒 My Cart</a>
+    <a href="#contact">📞 Contact</a>
+
+  </div>
+
+  <!-- MENU FOOTER (BOTTOM) -->
+  <div class="menu-footer">
+    <button id="authBtn" class="menu-auth-btn" onclick="handleAuth()">
+      Login
+    </button>
+  </div>
+
 </div>
 
   <div class="brand-name">JaffyDeals</div>

@@ -3,8 +3,23 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+window.handleAuth = async () => {
+  const auth = getAuth();
+
+  if (auth.currentUser) {
+    // 🔴 LOGOUT
+    await signOut(auth);
+  } else {
+    // 🟢 LOGIN
+    const modal = document.getElementById("loginModal");
+    if (modal) modal.style.display = "flex";
+    else window.location.href = "login.html";
+  }
+};
 
 // 🔹 Firebase config
 const firebaseConfig = {
@@ -25,7 +40,8 @@ const provider = new GoogleAuthProvider();
 window.googleLogin = async () => {
   try {
     await signInWithPopup(auth, provider);
-    document.getElementById("loginModal").style.display = "none";
+    const modal = document.getElementById("loginModal");
+if (modal) modal.style.display = "none";
   } catch (err) {
     alert(err.message);
   }
@@ -33,29 +49,23 @@ window.googleLogin = async () => {
 
 // 🔹 Auth State Listener (MOST IMPORTANT)
 onAuthStateChanged(auth, (user) => {
-  const nameEl = document.getElementById("menuUserName");
-  const avatarEl = document.getElementById("userAvatar");
+  const menuName = document.getElementById("menuUserName");
+  const menuAvatar = document.getElementById("userAvatar");
   const topAvatar = document.getElementById("topUserAvatar");
+  const authBtn = document.getElementById("authBtn");
 
   if (user) {
-    if (nameEl) nameEl.innerText = "Hello, " + user.displayName;
-
-    if (avatarEl) {
-      avatarEl.src = user.photoURL || "default-avatar.png";
-    }
+    // ✅ LOGGED IN
+    if (menuName) menuName.innerText = "Hello, " + (user.displayName || "User");
+    if (menuAvatar && user.photoURL) menuAvatar.src = user.photoURL;
+    if (topAvatar && user.photoURL) topAvatar.src = user.photoURL;
+    if (authBtn) authBtn.innerText = "Logout";
   } else {
-    if (nameEl) nameEl.innerText = "Hello, Guest";
-    if (avatarEl) avatarEl.src = "default-avatar.png";
+    // ❌ LOGGED OUT
+    if (menuName) menuName.innerText = "Hello, Guest";
+    if (menuAvatar) menuAvatar.src = "default-avatar.png";
+    if (topAvatar) topAvatar.src = "default-avatar.png";
+    if (authBtn) authBtn.innerText = "Login";
   }
-
-  if (user) {
-  if (topAvatar && user.photoURL) {
-    topAvatar.src = user.photoURL;
-  }
-} else {
-  if (topAvatar) {
-    topAvatar.src = "icons/user.png";
-  }
-}
-
 });
+

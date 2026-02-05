@@ -1,72 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | JaffyDeals</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .login-box {
-      background: #1c1c1c;
-      padding: 25px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 350px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      border: none;
-    }
-    button {
-      background: #ffcc00;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
 
   <div class="login-box">
     <h2>Login</h2>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button onclick="fakeLogin()">Login</button>
+
+    <button onclick="googleLogin()">
+      Continue with Google
+    </button>
+
+    <br><br>
+
+    <button onclick="window.location.href='index.html'">
+      Cancel
+    </button>
   </div>
 
-<script>
-function fakeLogin() {
-  const email = document.querySelector('input[type="email"]').value;
-
-  if (!email) {
-    alert("Please enter email");
-    return;
-  }
-
-  // extract name from email
-  const name = email.split("@")[0];
-
-  localStorage.setItem("userName", name);
-  localStorage.setItem("isLoggedIn", "true");
-
-  // go back to home
-  window.location.href = "index.html";
-}
-</script>
+  <!-- Firebase -->
+  <script type="module" src="firebase.js"></script>
 
 </body>
 </html>
+
