@@ -3,6 +3,7 @@
 <head>
   <title>Your Cart</title>
   <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -13,28 +14,42 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let box = document.getElementById("cartItems");
 
-if (cart.length === 0) {
-  box.innerHTML = "<p style='padding:20px;'>Cart is empty 😅</p>";
-}
+function renderCart() {
+  box.innerHTML = "";
 
-cart.forEach((p, i) => {
-  box.innerHTML += `
-    <div class="deal-card">
-      <img src="${p.image}" class="product-img">
-      <h4>${p.name}</h4>
-      <p>${p.price}</p>
-      <button class="btn" onclick="removeItem(${i})">❌ Remove</button>
-      <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-    </div>
-  `;
-});
+  if (cart.length === 0) {
+    box.innerHTML = "<p style='padding:20px;'>Cart is empty 😅</p>";
+    return;
+  }
+
+  cart.forEach((p, i) => {
+    box.innerHTML += `
+      <div class="cart-card">
+        <img src="${p.image}" alt="${p.name}" class="cart-img">
+
+        <div class="cart-info">
+          <h3 class="cart-title">${p.name}</h3>
+          <p class="cart-price">₹${p.price}</p>
+
+          <div class="cart-actions">
+            <button class="remove-btn" onclick="removeItem(${i})">❌ Remove</button>
+            <a href="${p.link}" target="_blank" class="buy-btn">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
 
 function removeItem(i) {
   cart.splice(i, 1);
   localStorage.setItem("cart", JSON.stringify(cart));
-  location.reload();
+  renderCart(); // 🔥 THIS is the fix
 }
+
+renderCart(); // initial render
 </script>
+
 
 </body>
 </html>
