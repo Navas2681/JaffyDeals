@@ -1162,5 +1162,23 @@ header {
   touch-action: none;
 }
 
+/* TOP NAV TEXT COLOR FIX */
+header nav a,
+header .nav-links a,
+header ul li a {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Optional: hover effect */
+header nav a:hover {
+  color: #ffd54f; /* soft yellow */
+}
+
+@media (max-width: 768px) {
+  header nav a {
+    color: #ffffff !important;
+  }
+}
 
 
