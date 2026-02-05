@@ -680,3 +680,8 @@ function openCart() {
 }
 
 updateCartCount();
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+
