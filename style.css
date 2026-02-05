@@ -1376,5 +1376,21 @@ header nav a:hover {
   cursor: pointer;
 }
 
+/* Make menu a column layout */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-
+/* Push logout button to bottom */
+.menu-auth-btn {
+  margin-top: auto;        /* MAGIC LINE */
+  margin-bottom: 20px;
+  width: calc(100% - 40px);
+  align-self: center;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+}
