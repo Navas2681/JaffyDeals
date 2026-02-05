@@ -22,13 +22,9 @@
 <div id="mobileMenu" class="mobile-menu">
 
   <a href="login.html" class="menu-profile">
-  <div class="avatar-circle" id="userAvatar">G</div>
+  <img id="userAvatar" src="default-avatar.png" alt="User Avatar">
   <p id="menuUserName">Hello, Guest</p>
 </a>
-
-<button class="change-name-btn" onclick="changeUserName()">
-  ✏️ Change Name
-</button>
 
   <a href="index.html">🏠 Home</a>
   <a href="#deals">🔥 Deals</a>
@@ -38,12 +34,17 @@
   <a href="#contact">📞 Contact</a>
 </div>
 
-
-
   <div class="brand-name">JaffyDeals</div>
 
   <div class="top-actions">
-    <button class="icon-btn" id="profileBtn">👤</button>
+    <img
+  id="topUserAvatar"
+  class="icon-btn profile-avatar"
+  src="icons/user.png"
+  alt="Profile"
+  onclick="openProfile()"
+/>
+
     <div class="cart-icon" onclick="openCart()">
   🛒 <span id="cartCount">0</span>
 </div>
