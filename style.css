@@ -1376,21 +1376,60 @@ header nav a:hover {
   cursor: pointer;
 }
 
-/* Make menu a column layout */
 .mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+
+  background: #1f1f1f;
+  color: #fff;
+
   display: flex;
   flex-direction: column;
-  height: 100vh;
+
+  padding: 20px 16px;
+  box-sizing: border-box;
+
+  z-index: 1001;
 }
 
-/* Push logout button to bottom */
+.menu-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-footer {
+  padding-top: 10px;
+}
+
 .menu-auth-btn {
-  margin-top: auto;        /* MAGIC LINE */
-  margin-bottom: 20px;
-  width: calc(100% - 40px);
-  align-self: center;
-  padding: 14px;
-  font-size: 16px;
+  width: 100%;
+  background: #f4c430;
+  color: #000;
   font-weight: bold;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* softer */
+  z-index: 1000;
+  display: none;
 }
