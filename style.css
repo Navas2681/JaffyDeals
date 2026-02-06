@@ -1455,31 +1455,39 @@ img {
   display: block;
 }
 
-/* ===== MOBILE MENU FOOTER FIX ===== */
+/* ===== FINAL MOBILE MENU FOOTER FIX ===== */
 @media (max-width: 768px) {
 
   .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
+    width: 80%;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* IMPORTANT */
+    z-index: 9999;
   }
 
   .menu-content {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 90px; /* space for logout */
+    padding-bottom: 100px; /* space for logout */
   }
 
   .menu-footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    width: 80%;
     background: #1e1e1e;
     padding: 12px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    z-index: 10000;
   }
 
   .menu-auth-btn {
     width: 100%;
   }
 }
-
