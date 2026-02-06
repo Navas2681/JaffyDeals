@@ -1421,16 +1421,24 @@ header nav a:hover {
 
 .menu-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  overflow: hidden;
-  touch-action: none;
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 998;
 }
 
 .menu-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: all;
 }
 
 .mobile-menu.open {

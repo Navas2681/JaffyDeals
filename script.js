@@ -745,4 +745,14 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// FIX 1: Reset menu & overlay when coming back from another page
+window.addEventListener("pageshow", () => {
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  if (menu) menu.classList.remove("active");
+  if (overlay) overlay.classList.remove("active");
+
+  document.body.classList.remove("no-scroll");
+});
 
