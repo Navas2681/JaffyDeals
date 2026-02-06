@@ -1364,46 +1364,48 @@ header nav a:hover {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: -100%;
-  width: 80%;
+  left: 0;
+
+  width: 80vw;          /* viewport based */
   max-width: 320px;
   height: 100vh;
 
-  background: #1e1e1e;
-  z-index: 1001;
+  background: #1f1f1f;
+  color: #fff;
 
   display: flex;
   flex-direction: column;
 
-  overflow: hidden; /* 🔥 VERY IMPORTANT */
-  transition: left 0.3s ease;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  z-index: 1001;
+
+  box-sizing: border-box;
+  overflow: hidden;    /* IMPORTANT */
 }
 
 .menu-content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
-
-  /* optional smooth scrolling */
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
 }
 
 .menu-footer {
   padding: 16px;
-  background: #1e1e1e;
   border-top: 1px solid #333;
-
-  flex-shrink: 0; /* 🔥 prevents shrinking */
 }
 
 .menu-auth-btn {
   width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  border-radius: 10px;
   background: #f4c430;
-  border: none;
+  color: #000;
   font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .menu-close-btn {
@@ -1420,16 +1422,15 @@ header nav a:hover {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  background: rgba(0,0,0,0.5);
+  overflow: hidden;
+  touch-action: none;
   z-index: 1000;
 }
 
 .menu-overlay.active {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
 }
 
 .mobile-menu.open {
@@ -1454,8 +1455,114 @@ img {
   display: block;
 }
 
+/* ===== OVERLAY ===== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== SIDE MENU ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #1e1e1e;
+  z-index: 1001;
+
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+}
+
 .mobile-menu.active {
-  left: 0; /* 🔥 brings menu back on screen */
+  left: 0;
+}
+
+/* CLOSE BUTTON */
+.menu-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ===== MENU CONTENT (SCROLLABLE ONLY HERE) ===== */
+.menu-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 60px 16px 16px;
+}
+
+/* LINKS */
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* PROFILE */
+.menu-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.menu-profile img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+/* ===== FOOTER (FIXED) ===== */
+.menu-footer {
+  padding: 14px;
+  border-top: 1px solid #333;
+  background: #1e1e1e;
+}
+
+/* LOGOUT / LOGIN BUTTON */
+.menu-auth-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #f4c430;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 
