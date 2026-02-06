@@ -728,9 +728,14 @@ function loadCategoryProducts(category) {
 
 document.addEventListener("click", function (e) {
   const link = e.target.closest("a");
-  if (!link) return;
+  if (!link || !link.href) return;
 
-  if (link.href && link.href.includes("clnk.in")) {
+  if (
+    link.href.includes("clnk.in") ||
+    link.href.includes("amzn") ||
+    link.href.includes("meesho") ||
+    link.href.includes("flipkart")
+  ) {
     if (typeof gtag === "function") {
       gtag("event", "affiliate_click", {
         event_category: "affiliate",
@@ -739,4 +744,5 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+
 
