@@ -1520,6 +1520,231 @@ img {
   font-size: 14px;
 }
 
+/* ============================
+   SEO PAGE RESET (IMPORTANT)
+============================ */
 
+body.seo-page {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
 
+/* Remove any fixed headers / overlays */
+body.seo-page .top-brand-bar,
+body.seo-page .menu-overlay,
+body.seo-page #mobileMenu,
+body.seo-page header,
+body.seo-page nav {
+  display: none !important;
+}
 
+/* Remove fake dark layers */
+body.seo-page::before,
+body.seo-page::after {
+  display: none !important;
+}
+
+/* Proper layout */
+body.seo-page .page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Typography */
+body.seo-page .page-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+body.seo-page .page-intro {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Sections */
+body.seo-page .seo-content p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+body.seo-page .section-title {
+  margin: 30px 0 15px;
+  font-size: 1.4rem;
+}
+
+/* Product grid safety */
+body.seo-page .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Footer */
+body.seo-page .page-footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #0f0e0e;
+  font-size: 0.95rem;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.page-intro {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================================
+   DEALS PAGE (CATEGORY HUB)
+   Only affects deals.html
+================================ */
+
+/* page spacing */
+body.seo-page .page-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 16px;
+}
+
+/* title */
+body.seo-page .page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* subtitle */
+body.seo-page .page-intro {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+/* category grid */
+body.seo-page .deal-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* category card */
+body.seo-page .deal-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #111;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover effect */
+body.seo-page .deal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+/* emoji icon */
+body.seo-page .deal-card:first-child::before {
+  content: "💄";
+}
+body.seo-page .deal-card:nth-child(2)::before {
+  content: "👗";
+}
+body.seo-page .deal-card:nth-child(3)::before {
+  content: "🛍️";
+}
+
+/* icon style */
+body.seo-page .deal-card::before {
+  display: block;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+/* card title */
+body.seo-page .deal-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+/* card description */
+body.seo-page .deal-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* mobile polish */
+@media (max-width: 600px) {
+  body.seo-page .page-title {
+    font-size: 1.6rem;
+  }
+
+  body.seo-page .deal-card {
+    padding: 22px 16px;
+  }
+}
+
+/* ===== FINAL DEALS PAGE POLISH ===== */
+
+/* Center the whole section nicely */
+body.seo-page .page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Better heading spacing */
+body.seo-page .page-title {
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+/* Subtitle width control */
+body.seo-page .page-intro {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Cards container centering */
+body.seo-page .deal-categories {
+  margin-top: 32px;
+  width: 100%;
+}
+
+/* Card refinement */
+body.seo-page .deal-card {
+  border: 1px solid #eee;
+}
+
+/* Smooth hover feel */
+body.seo-page .deal-card:hover {
+  border-color: #ffd54f;
+}
+
+/* Make cards feel clickable */
+body.seo-page .deal-card h3 {
+  font-weight: 700;
+}
+
+/* Better emoji alignment */
+body.seo-page .deal-card::before {
+  line-height: 1;
+}
