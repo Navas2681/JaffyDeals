@@ -1,14 +1,3 @@
-// FIX: reset menu & overlay on page load (mobile back issue)
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("menuOverlay");
-
-  if (menu) menu.classList.remove("open");
-  if (overlay) overlay.style.display = "none";
-
-  document.body.style.overflow = "auto";
-});
-
 function detectStore(url) {
   url = url.toLowerCase();
   if (url.includes("amazon") || url.includes("amzn")) return "Amazon";
@@ -693,38 +682,15 @@ function openCart() {
 updateCartCount();
 
 function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("menuOverlay");
-
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-
-  // Lock / unlock scroll
-  document.body.style.overflow = menu.classList.contains("active")
-    ? "hidden"
-    : "auto";
+  document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuOverlay").classList.toggle("active");
 }
 
-// Close menu properly when clicking any link
+
 document.querySelectorAll("#mobileMenu a").forEach(link => {
   link.addEventListener("click", () => {
-    closeMenu();
+    document.getElementById("mobileMenu").classList.remove("active");
   });
-});
-
-// Close menu function (IMPORTANT)
-function closeMenu() {
-  const menu = document.getElementById("mobileMenu");
-  const overlay = document.getElementById("menuOverlay");
-
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.style.overflow = "auto";
-}
-
-// 🔥 FIX mobile BACK button issue
-document.addEventListener("DOMContentLoaded", () => {
-  closeMenu();
 });
 
 function loadCategoryProducts(category) {
