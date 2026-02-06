@@ -725,3 +725,18 @@ function loadCategoryProducts(category) {
         });
     });
 }
+
+document.addEventListener("click", function (e) {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  if (link.href && link.href.includes("clnk.in")) {
+    if (typeof gtag === "function") {
+      gtag("event", "affiliate_click", {
+        event_category: "affiliate",
+        event_label: link.href,
+      });
+    }
+  }
+});
+
