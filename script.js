@@ -693,3 +693,35 @@ document.querySelectorAll("#mobileMenu a").forEach(link => {
   });
 });
 
+function loadCategoryProducts(category) {
+  fetch("products.json")
+    .then(res => res.json())
+    .then(products => {
+      const container = document.getElementById("productList");
+      if (!container) return;
+
+      container.innerHTML = "";
+
+      products
+        .filter(p => p.category === category)
+        .slice(0, 15)
+        .forEach(p => {
+          container.innerHTML += `
+            <div class="product-card">
+              <img src="${p.image}" alt="${p.name}">
+              <h3>${p.name}</h3>
+
+              <p class="price">
+                ₹${p.price}
+                ${p.mrp ? `<span class="mrp">₹${p.mrp}</span>` : ""}
+                ${p.discount ? `<span class="discount">${p.discount}</span>` : ""}
+              </p>
+
+              ${p.rating ? `<p class="rating">⭐ ${p.rating}</p>` : ""}
+
+              <a href="${p.link}" target="_blank">View Deal</a>
+            </div>
+          `;
+        });
+    });
+}

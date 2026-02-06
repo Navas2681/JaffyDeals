@@ -54,18 +54,75 @@ onAuthStateChanged(auth, (user) => {
   const topAvatar = document.getElementById("topUserAvatar");
   const authBtn = document.getElementById("authBtn");
 
+  // WELCOME elements
+  const welcomeBox = document.getElementById("welcomeBox");
+  const welcomeName = document.getElementById("welcomeName");
+
   if (user) {
     // ✅ LOGGED IN
-    if (menuName) menuName.innerText = "Hello, " + (user.displayName || "User");
-    if (menuAvatar && user.photoURL) menuAvatar.src = user.photoURL;
-    if (topAvatar && user.photoURL) topAvatar.src = user.photoURL;
-    if (authBtn) authBtn.innerText = "Logout";
+    const name = user.displayName || "Friend";
+    const photo = user.photoURL || "default-avatar.png";
+
+    if (menuName) menuName.innerText = `Hello, ${name}`;
+    if (menuAvatar) menuAvatar.src = photo;
+    if (topAvatar) topAvatar.src = photo;
+
+    if (authBtn) {
+      authBtn.innerText = "Logout";
+      authBtn.onclick = logoutUser;
+    }
+
+    /* 👋 WELCOME MESSAGE (once per day) */
+    const today = new Date().toDateString();
+    const lastShown = localStorage.getItem("welcomeShown");
+
+    if (welcomeBox && welcomeName && lastShown !== today) {
+      welcomeName.innerText = name;
+      welcomeBox.style.display = "block";
+      localStorage.setItem("welcomeShown", today);
+
+      setTimeout(() => {
+        welcomeBox.style.display = "none";
+      }, 5000);
+    }
+
   } else {
     // ❌ LOGGED OUT
     if (menuName) menuName.innerText = "Hello, Guest";
     if (menuAvatar) menuAvatar.src = "default-avatar.png";
     if (topAvatar) topAvatar.src = "default-avatar.png";
-    if (authBtn) authBtn.innerText = "Login";
+
+    if (authBtn) {
+      authBtn.innerText = "Login";
+      authBtn.onclick = () => {
+        window.location.href = "login.html";
+      };
+    }
+
+    // hide welcome if logged out
+    if (welcomeBox) welcomeBox.style.display = "none";
   }
 });
+
+function showNotification(message) {
+  const box = document.getElementById("notifyBox");
+  const text = document.getElementById("notifyText");
+
+  if (!box || !text) return;
+
+  text.innerText = message;
+  box.style.display = "flex";
+
+  // auto-hide after 6 seconds
+  setTimeout(() => {
+    box.style.display = "none";
+  }, 6000);
+}
+
+function closeNotify() {
+  document.getElementById("notifyBox").style.display = "none";
+}
+
+showNotification("🔥 New deals added today!");
+
 
