@@ -1364,48 +1364,46 @@ header nav a:hover {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
-
-  width: 80vw;          /* viewport based */
+  left: -100%;
+  width: 80%;
   max-width: 320px;
   height: 100vh;
 
-  background: #1f1f1f;
-  color: #fff;
+  background: #1e1e1e;
+  z-index: 1001;
 
   display: flex;
   flex-direction: column;
 
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-
-  z-index: 1001;
-
-  box-sizing: border-box;
-  overflow: hidden;    /* IMPORTANT */
+  overflow: hidden; /* 🔥 VERY IMPORTANT */
+  transition: left 0.3s ease;
 }
 
 .menu-content {
   flex: 1;
   overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
+  padding: 16px;
+
+  /* optional smooth scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-footer {
   padding: 16px;
+  background: #1e1e1e;
   border-top: 1px solid #333;
+
+  flex-shrink: 0; /* 🔥 prevents shrinking */
 }
 
 .menu-auth-btn {
   width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
   background: #f4c430;
-  color: #000;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 8px;
   border: none;
-  cursor: pointer;
+  font-weight: bold;
 }
 
 .menu-close-btn {
@@ -1422,15 +1420,16 @@ header nav a:hover {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
-  overflow: hidden;
-  touch-action: none;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
   z-index: 1000;
 }
 
 .menu-overlay.active {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu.open {
@@ -1455,6 +1454,9 @@ img {
   display: block;
 }
 
+.mobile-menu.active {
+  left: 0; /* 🔥 brings menu back on screen */
+}
 
 
 
