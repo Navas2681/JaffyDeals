@@ -681,17 +681,47 @@ function openCart() {
 
 updateCartCount();
 
-function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("active");
-  document.getElementById("menuOverlay").classList.toggle("active");
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+
+function openMenu() {
+  const scrollY = window.scrollY;
+  document.body.style.top = `-${scrollY}px`;
+  document.body.dataset.scrollY = scrollY;
+
+  document.body.classList.add("no-scroll");
+  menu.classList.add("active");
+  overlay.classList.add("active");
 }
 
+function closeMenu() {
+  const scrollY = document.body.dataset.scrollY || 0;
 
-document.querySelectorAll("#mobileMenu a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("mobileMenu").classList.remove("active");
-  });
-});
+  document.body.classList.remove("no-scroll");
+  document.body.style.top = "";
+  window.scrollTo(0, scrollY);
+
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+function toggleMenu() {
+  if (menu.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+// Close menu when clicking overlay
+overlay.addEventListener("click", closeMenu);
+
+// Close menu when clicking any menu link
+document.querySelectorAll("#mobileMenu a, .menu-close-btn")
+  .forEach(el => el.addEventListener("click", closeMenu));
+
+// Fix back button / cache restore
+window.addEventListener("pageshow", closeMenu);
 
 function loadCategoryProducts(category) {
   fetch("products.json")
