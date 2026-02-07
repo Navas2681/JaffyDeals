@@ -1807,3 +1807,141 @@ body.no-scroll {
   left: 0;
   overflow: hidden;
 }
+
+.seo-subtitle {
+  font-size: 16px;
+  margin: 12px 0 8px;
+  color: #111;
+}
+
+/* =========================
+   PROFESSIONAL MEESHO LANDING
+   ========================= */
+
+.meesho-landing {
+  background: #f5f6f8 !important;
+  color: #111;
+}
+
+/* TOP BAR */
+.landing-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.landing-topbar .back-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #ff5f6d;
+}
+
+.landing-topbar .brand {
+  font-weight: 700;
+}
+
+/* HERO */
+.landing-hero {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: #fff;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.landing-hero h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.landing-hero p {
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* TRUST */
+.landing-trust {
+  background: #ffffff;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* CONTAINER */
+.landing-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* ABOUT */
+.landing-about {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.landing-about p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* PRODUCTS */
+.landing-products h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.meesho-landing .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+/* CTA */
+.landing-cta {
+  text-align: center;
+  margin: 22px 0;
+  font-size: 14px;
+}
+
+.landing-cta a {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ff5f6d;
+}
+
+/* FOOTER */
+.landing-footer {
+  text-align: center;
+  padding: 14px;
+  font-size: 13px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+/* INTERNAL LINK TO ARCHIVE */
+.archive-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.archive-link a {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ff5f6d;
+}
+
+.archive-link a:hover {
+  text-decoration: underline;
+}
+
+

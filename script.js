@@ -730,30 +730,45 @@ function loadCategoryProducts(category) {
       const container = document.getElementById("productList");
       if (!container) return;
 
-      container.innerHTML = "";
+      const filtered = products.filter(p =>
+        p.category === category &&
+        p.featured === true &&
+        p.addedOn &&
+        isWithinDays(p.addedOn, 3)
+      );
 
-      products
-        .filter(p => p.category === category)
-        .slice(0, 15)
-        .forEach(p => {
-          container.innerHTML += `
-            <div class="product-card">
-              <img src="${p.image}" alt="${p.name}">
-              <h3>${p.name}</h3>
-
-              <p class="price">
-                ₹${p.price}
-                ${p.mrp ? `<span class="mrp">₹${p.mrp}</span>` : ""}
-                ${p.discount ? `<span class="discount">${p.discount}</span>` : ""}
-              </p>
-
-              ${p.rating ? `<p class="rating">⭐ ${p.rating}</p>` : ""}
-
-              <a href="${p.link}" target="_blank">View Deal</a>
-            </div>
-          `;
-        });
+      renderProducts(filtered);
     });
+}
+function renderProducts(products) {
+  const container = document.getElementById("productList");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (products.length === 0) {
+  container.innerHTML = "<p>No new deals today. Check back soon... 🔥</p>";
+  return;
+}
+
+  products.forEach(p => {
+    container.innerHTML += `
+      <div class="product-card">
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+
+        <p class="price">
+          ₹${p.price}
+          ${p.mrp ? `<span class="mrp">₹${p.mrp}</span>` : ""}
+          ${p.discount ? `<span class="discount">${p.discount}</span>` : ""}
+        </p>
+
+        ${p.rating ? `<p class="rating">⭐ ${p.rating}</p>` : ""}
+
+        <a href="${p.link}" target="_blank">View Deal</a>
+      </div>
+    `;
+  });
 }
 
 document.addEventListener("click", function (e) {
@@ -786,3 +801,21 @@ window.addEventListener("pageshow", () => {
   document.body.classList.remove("no-scroll");
 });
 
+function loadArchiveProducts(platform) {
+  fetch("products.json")
+    .then(res => res.json())
+    .then(data => {
+      const products = data.filter(p => p.platform === platform);
+      renderProducts(products);
+    });
+}
+
+function isWithinDays(dateStr, days) {
+  const addedDate = new Date(dateStr);
+  const today = new Date();
+
+  const diffTime = today - addedDate;
+  const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+  return diffDays <= days;
+}
