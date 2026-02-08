@@ -2541,6 +2541,7 @@
   },
 
   {
+    "id": "beauty_001",
     "name": "Candy Melts Red Velvet Love Tinted Lip Balm",
     "price": "169",
     "mrp": "199",
@@ -2550,6 +2551,89 @@
     "image": "https://plumgoodness.com/cdn/shop/files/Website_RVL-Stick_1100x1100_1.jpg?v=1744888522&width=900",
     "link": "https://clnk.in/y7EG",
     "rating": 4.4,
-    "keywords": "tinted lip balm, red tinted lip balm, moisturizing lip balm, nourishing lip balm, sheer tint lip balm, lip balm for dry lips, glossy lip balm, everyday lip balm, natural look lip balm, soft lips balm, unisex lip balm, travel friendly lip balm, hydrating lip care"
-  }
+    "keywords": "tinted lip balm, red tinted lip balm, moisturizing lip balm, nourishing lip balm, sheer tint lip balm, lip balm for dry lips, glossy lip balm, everyday lip balm, natural look lip balm, soft lips balm, unisex lip balm, travel friendly lip balm, hydrating lip care",
+    "rank": 1,
+    "featured": false
+  },
+
+  {
+  "id": "beauty_002",
+  "name": "Vilvah. 100% Organic Cold-Pressed Aloe Vera Gel for All Skin & Hair Types - 100 g",
+  "price": "379",
+  "mrp": "390",
+  "discount": "3% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare, haircare, hair care, skin body care",
+
+  "image": "https://images-static.nykaa.com/media/catalog/product/a/8/a8e9553NYKVLST000009ab_bb5.jpg",
+  "link": "https://myntr.clnk.in/zeMs",
+
+  "rating": 4.6,
+  "keywords": "aloe vera gel, organic aloe vera gel, cold pressed aloe vera gel, pure aloe vera gel, aloe vera gel for skin and hair, natural aloe gel, chemical free aloe vera gel, soothing aloe vera gel, hydrating aloe gel, aloe gel for acne prone skin, aloe vera gel for oily skin, aloe vera gel for hair growth, scalp soothing aloe gel, multipurpose aloe vera gel, unisex skincare gel",
+
+  "rank": 2,
+  "featured": false
+},
+
+{
+  "id": "beauty_003",
+  "name": "Garnier. Vitamin C + Face Serum for Skin Brightening with 2% Niacinamide & 0.5% BHA - 30ml",
+  "price": "495",
+  "mrp": "619",
+  "discount": "20% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare",
+
+  "image": "https://images-static.nykaa.com/media/catalog/product/d/7/d71392cGARNI00000177-new_8.jpg",
+  "link": "https://myntr.clnk.in/zeMS",
+
+  "rating": 4.4,
+  "keywords": "charcoal face wash, kali miti face wash, charcoal face cleanser, deep cleansing face wash, anti pollution face wash, detox face wash, face wash for oily skin, face wash for acne prone skin, black charcoal face wash, natural face wash, herbal face wash, toxin removal face wash, pore cleansing face wash, daily face wash for men and women, ayurvedic face wash, skin detox cleanser",
+
+  "rank": 3,
+  "featured": false
+},
+
+{
+  "id": "beauty_004",
+  "name": "Nat Habit. Kali Miti Charcoal Deep Cleansing Face Wash For Anti-Pollution - 100 g",
+  "price": "288",
+  "mrp": "",
+  "discount": "% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare, skin body care",
+
+  "image": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/2025/JANUARY/24/MISjOpX7_0e693f710ce54cb2a689902451497d9a.jpg",
+  "link": "https://myntr.clnk.in/zeNB",
+
+  "rating": 4.6,
+  "keywords": "garnier vitamin c serum, vitamin c face serum, niacinamide serum, bha face serum, skin brightening serum, dark spot removal serum, glow boosting serum, acne control serum, pore refining serum, antioxidant face serum, lightweight face serum, daily skincare serum, serum for oily skin, serum for acne prone skin, serum for dull skin, unisex face serum",
+
+  "rank": 4,
+  "featured": false
+},
+
+{
+  "id": "beauty_005",
+  "name": "Cetaphil. Gentle Skin Cleanser With & Pro-Vitamin B5 & B3 - 118 ml",
+  "price": "403",
+  "mrp": "459",
+  "discount": "12% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare, skin body care",
+
+  "image": "https://cdn2.arogga.com/eyJidWNrZXQiOiJhcm9nZ2EiLCJrZXkiOiJQcm9kdWN0LXBfaW1hZ2VzXC84MDI5MFwvODAyOTAtR0FMRC05MzE4NjM3MDY5NjM3LTFfXzI0MjM1LWFyMnloZC5qcGVnIiwiZWRpdHMiOltdfQ==",
+  "link": "https://myntr.clnk.in/zeNE",
+
+  "rating": 4.6,
+  "keywords": "cetaphil gentle skin cleanser, cetaphil face wash, gentle face cleanser, soap free cleanser, cleanser for sensitive skin, daily face wash, hydrating face cleanser, non foaming face wash, mild face cleanser, dermatologist recommended cleanser, face wash for dry skin, face wash for normal skin, face wash with vitamin b5, face wash with vitamin b3, barrier repair cleanser, fragrance free face wash, unisex face cleanser",
+
+  "rank": 5,
+  "featured": false
+}
+
 ]

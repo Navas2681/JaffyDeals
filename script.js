@@ -819,3 +819,19 @@ function isWithinDays(dateStr, days) {
 
   return diffDays <= days;
 }
+
+function loadBestBeautyProducts() {
+  fetch("products.json")
+    .then(res => res.json())
+    .then(products => {
+      const container = document.getElementById("productList");
+      if (!container) return;
+
+      const filtered = products
+        .filter(p => p.category === "beauty" && p.rank)
+        .sort((a, b) => a.rank - b.rank)
+        .slice(0, 10);
+
+      renderProducts(filtered);
+    });
+}
