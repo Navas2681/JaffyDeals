@@ -757,6 +757,8 @@ function renderProducts(products) {
         <img src="${p.image}" alt="${p.name}">
         <h3>${p.name}</h3>
 
+        ${p.benefit ? `<p class="benefit">${p.benefit}</p>` : ""}
+
         <p class="price">
           ₹${p.price}
           ${p.mrp ? `<span class="mrp">₹${p.mrp}</span>` : ""}

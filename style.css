@@ -1944,4 +1944,10 @@ body.no-scroll {
   text-decoration: underline;
 }
 
+.benefit {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0;
+  line-height: 1.4;
+}
 

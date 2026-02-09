@@ -2552,6 +2552,7 @@
     "link": "https://clnk.in/y7EG",
     "rating": 4.4,
     "keywords": "tinted lip balm, red tinted lip balm, moisturizing lip balm, nourishing lip balm, sheer tint lip balm, lip balm for dry lips, glossy lip balm, everyday lip balm, natural look lip balm, soft lips balm, unisex lip balm, travel friendly lip balm, hydrating lip care",
+    "benefit": "💋 Keeps lips soft and moisturized with a natural everyday tint.",
     "rank": 1,
     "featured": false
   },
@@ -2571,6 +2572,8 @@
 
   "rating": 4.6,
   "keywords": "aloe vera gel, organic aloe vera gel, cold pressed aloe vera gel, pure aloe vera gel, aloe vera gel for skin and hair, natural aloe gel, chemical free aloe vera gel, soothing aloe vera gel, hydrating aloe gel, aloe gel for acne prone skin, aloe vera gel for oily skin, aloe vera gel for hair growth, scalp soothing aloe gel, multipurpose aloe vera gel, unisex skincare gel",
+
+  "benefit": "🌿 Multi-use gel for soothing skin, hydrating face, and nourishing hair.",
 
   "rank": 2,
   "featured": false
@@ -2592,6 +2595,8 @@
   "rating": 4.4,
   "keywords": "charcoal face wash, kali miti face wash, charcoal face cleanser, deep cleansing face wash, anti pollution face wash, detox face wash, face wash for oily skin, face wash for acne prone skin, black charcoal face wash, natural face wash, herbal face wash, toxin removal face wash, pore cleansing face wash, daily face wash for men and women, ayurvedic face wash, skin detox cleanser",
 
+  "benefit": "✨ Brightens skin and boosts glow while reducing dark spots.",
+
   "rank": 3,
   "featured": false
 },
@@ -2611,6 +2616,8 @@
 
   "rating": 4.6,
   "keywords": "garnier vitamin c serum, vitamin c face serum, niacinamide serum, bha face serum, skin brightening serum, dark spot removal serum, glow boosting serum, acne control serum, pore refining serum, antioxidant face serum, lightweight face serum, daily skincare serum, serum for oily skin, serum for acne prone skin, serum for dull skin, unisex face serum",
+
+  "benefit": "🧼 Deep cleans pores and helps control oil and acne.",
 
   "rank": 4,
   "featured": false
@@ -2632,8 +2639,139 @@
   "rating": 4.6,
   "keywords": "cetaphil gentle skin cleanser, cetaphil face wash, gentle face cleanser, soap free cleanser, cleanser for sensitive skin, daily face wash, hydrating face cleanser, non foaming face wash, mild face cleanser, dermatologist recommended cleanser, face wash for dry skin, face wash for normal skin, face wash with vitamin b5, face wash with vitamin b3, barrier repair cleanser, fragrance free face wash, unisex face cleanser",
 
+  "benefit": "☀️ Protects skin from sun damage and premature aging daily.",
+
   "rank": 5,
   "featured": false
+},
+
+{
+  "id": "beauty_006",
+  "name": "Vaseline. Deep Moisture Body Lotion with Ceramide Hyaluron for Dry Skin - 725 ml",
+  "price": "351",
+  "mrp": "949",
+  "discount": "63% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare, skin body care",
+
+  "image": "https://tse1.mm.bing.net/th/id/OIP.3amN4JkL1gT-M5l8NkqcSQHaHa?pid=ImgDet&w=474&h=474&rs=1&o=7&rm=3",
+  "link": "https://myntr.clnk.in/zeYV",
+
+  "rating": 4.6,
+  "keywords": "vaseline deep moisture body lotion, body lotion for dry skin, ceramide body lotion, hyaluron body lotion, long lasting moisture lotion, intensive moisturizing body lotion, dry skin repair lotion, daily body moisturizer, non greasy body lotion, skin barrier repair lotion, hydrating body lotion, winter body lotion, body care for dry skin, lotion for men and women, large size body lotion",
+
+  "benefit": "🧴 Deeply moisturizes skin and keeps it soft all day long.",
+
+  "rank": 6,
+  "featured": false
+},
+
+{
+  "id": "beauty_007",
+  "name": "Lakme. 9to5 Set of 2 Eyeconic Kajal Matte Finish & Lasts upto 24hrs 0.35g Each - Deep Black",
+  "price": "315",
+  "mrp": "450",
+  "discount": "30% OFF",
+
+  "category": "beauty",
+  "subcategory": "makeup",
+
+  "image": "https://i.ebayimg.com/images/g/76AAAOSwsz1meSfV/s-l1600.jpg",
+  "link": "https://myntr.clnk.in/zeZh",
+
+  "rating": 4.6,
+  "keywords": "lakme eyeconic kajal, lakme 9to5 kajal, black kajal pencil, matte finish kajal, long lasting kajal, 24 hours kajal, smudge proof kajal, waterproof kajal, deep black kajal, eye makeup kajal, kajal for women, daily wear kajal, intense black kajal, indian eye makeup, kajal set of 2",
+
+  "benefit": "👁️ Smudge-proof kajal for bold, long-lasting everyday eye makeup.",
+
+  "rank": 7,
+  "featured": false
+},
+
+{
+  "id": "beauty_008",
+  "name": "indulekha. Bringha Hair Oil with Amla & Almond to Reduce Hair Fall & Grow New Hair - 120 ml",
+  "price": "315",
+  "mrp": "630",
+  "discount": "50% OFF",
+
+  "category": "beauty",
+  "subcategory": "haircare, hair care",
+
+  "image": "https://tse1.mm.bing.net/th/id/OIP.FxB4fZ93dW4kR2tCQOH4JQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+  "link": "https://myntr.clnk.in/zeZr",
+
+  "rating": 4.5,
+  "keywords": "indulekha bringha hair oil, ayurvedic hair oil, hair fall control oil, hair regrowth oil, bhringraj hair oil, hair growth oil, amla almond hair oil, scalp nourishment oil, reduce hair fall oil, natural hair oil, herbal hair oil, hair oil for thinning hair, hair strengthening oil, hair care oil for men and women",
+   
+  "benefit": "💆 Strengthens hair roots and helps reduce hair fall naturally.",
+
+  "rank": 8,
+  "featured": false
+},
+
+{
+  "id": "beauty_009",
+  "name": "DOT & KEY. Anti-Acne Salicylic Green Clay Face Mask to Reduces Dark Spots & Balance Oil-85g",
+  "price": "468",
+  "mrp": "550",
+  "discount": "15% OFF",
+
+  "category": "beauty",
+  "subcategory": "skincare",
+
+  "image": "https://images-static.nykaa.com/media/catalog/product/f/5/f562a108904035422467_n3.jpg",
+  "link": "https://myntr.clnk.in/zfiZ",
+
+  "rating": 4.5,
+  "keywords": "dot and key face mask, anti acne face mask, salicylic acid face mask, green clay face mask, oil control face mask, acne control mask, dark spot reduction mask, pore cleansing mask, detox clay mask, face mask for oily skin, face mask for acne prone skin, weekly skincare mask, deep cleansing face mask, unisex face mask",
+
+  "benefit": "🧖 Instantly refreshes skin and removes impurities for a clean glow.",
+
+  "rank": 9,
+  "featured": false
+},
+
+{
+  "id": "beauty_010",
+  "name": "Maybelline. New York Fit Me Matte + Poreless SPF 32 Compact Powder 6g - Natural Buff 230",
+  "price": "215",
+  "mrp": "230",
+  "discount": "10% OFF",
+
+  "category": "beauty",
+  "subcategory": "makeup",
+
+  "image": "https://th.bing.com/th/id/R.e3246f14772dc930edcf40ef0912f199?rik=EPaTFLJ4R%2fNzsg&riu=http%3a%2f%2freana.pk%2fcdn%2fshop%2ffiles%2f02OldtoNew.jpg%3fv%3d1702715483&ehk=dkxsuRfIuVv6odV8fC%2fc67kg8RDvnUwkv8PRxHIN08g%3d&risl=&pid=ImgRaw&r=0",
+  "link": "https://myntr.clnk.in/zfji",
+
+  "rating": 4.4,
+  "keywords": "maybelline fit me compact, fit me matte poreless powder, compact powder for oily skin, matte finish compact, pore minimizing compact, spf 32 compact powder, natural buff 230 compact, face powder for daily wear, long lasting compact powder, lightweight face compact, oil control compact powder, makeup compact for women, maybelline face makeup, compact powder with spf",
+
+  "benefit": "🎀 Gives a smooth, even look with light everyday coverage.",
+
+  "rank": 10,
+  "featured": false
+},
+
+{
+  "name": "Bare Anatomy Advanced Hair Growth Serum | 3% Redensyl, 4% Anagain, 3% Baicapil, 1% Capilia Longa, Rosemary, Biotin & Rice Water | Controls Hair Fall & Supports Hair Density | for Women & Men | 20ml",
+  "price": "514",
+  "mrp": "599",
+  "discount": "14% OFF",
+
+  "category": "beauty",
+  "subcategory": "haircare, hair care",
+
+  "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/hair-serum/7/a/c/20-advanced-hair-growth-serum-redensyl-rosemary-anagain-biotin-original-imahfz9edh7frqyd.jpeg?q=70&crop=false",
+  "link": "https://fktr.in/o9AzO33",
+
+  "rating": 4.1,
+  "keywords": "bare anatomy hair growth serum, hair growth serum, redensyl hair serum, rosemary hair serum, anagain hair serum, biotin hair serum, hair fall control serum, hair regrowth serum, scalp treatment serum, hair density serum, strengthening hair serum, non greasy hair serum, unisex hair serum, serum for thinning hair, advanced hair care serum",
+
+  "featured": false
 }
+
 
 ]
