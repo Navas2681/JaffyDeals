@@ -548,55 +548,61 @@ document.addEventListener("click", function(e) {
 
 const subFiltersBox = document.getElementById("subfilters");
 
-let isDown = false;
-let startX;
-let scrollLeft;
+if (subFiltersBox) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-subFiltersBox.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - subFiltersBox.offsetLeft;
-  scrollLeft = subFiltersBox.scrollLeft;
-});
+  subFiltersBox.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - subFiltersBox.offsetLeft;
+    scrollLeft = subFiltersBox.scrollLeft;
+  });
 
-subFiltersBox.addEventListener('mouseleave', () => {
-  isDown = false;
-});
+  subFiltersBox.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
 
-subFiltersBox.addEventListener('mouseup', () => {
-  isDown = false;
-});
+  subFiltersBox.addEventListener('mouseup', () => {
+    isDown = false;
+  });
 
-subFiltersBox.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - subFiltersBox.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  subFiltersBox.scrollLeft = scrollLeft - walk;
-});
+  subFiltersBox.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - subFiltersBox.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    subFiltersBox.scrollLeft = scrollLeft - walk;
+  });
+}
 
 // Done 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelector(".slides");
-  const dots = document.querySelectorAll(".dot");
+// 🔥 SLIDER – WORKS ON ALL PAGES
+const slides = document.querySelector(".slides");
+const dots = document.querySelectorAll(".dot");
 
-  if (!slides || dots.length === 0) return;
-
+if (slides) {
   let index = 0;
+  const totalSlides = slides.children.length;
 
   function showSlide(i) {
     slides.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[i].classList.add("active");
+
+    // update dots only if present
+    if (dots.length) {
+      dots.forEach(dot => dot.classList.remove("active"));
+      if (dots[i]) dots[i].classList.add("active");
+    }
   }
 
-  // Auto slide
+  // auto slide
   setInterval(() => {
-    index = (index + 1) % dots.length;
+    index = (index + 1) % totalSlides;
     showSlide(index);
   }, 4000);
 
-  // Dot click
+  // dot click
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       index = i;
@@ -604,7 +610,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Swipe support (mobile)
+  // swipe support
   let startX = 0;
 
   slides.addEventListener("touchstart", e => {
@@ -612,14 +618,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   slides.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
+    const endX = e.changedTouches[0].clientX;
 
-    if (startX - endX > 50) index = (index + 1) % dots.length;
-    if (endX - startX > 50) index = (index - 1 + dots.length) % dots.length;
+    if (startX - endX > 50) index = (index + 1) % totalSlides;
+    if (endX - startX > 50) index = (index - 1 + totalSlides) % totalSlides;
 
     showSlide(index);
   });
-});
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const profileBtn = document.getElementById("profileBtn");

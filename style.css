@@ -1951,3 +1951,22 @@ body.no-scroll {
   line-height: 1.4;
 }
 
+.banner-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
