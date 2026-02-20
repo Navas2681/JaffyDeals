@@ -10,9 +10,13 @@
 <h2 style="padding:20px;">Your Cart 🛒</h2>
 <button class="back-btn" onclick="history.back()">← Continue Shopping</button>
 <div id="cartSummary" class="cart-summary"></div>
+<button onclick="clearCart()" class="clear-cart-btn">🗑 Clear Cart</button>
 <div id="cartItems"></div>
 
 <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let box = document.getElementById("cartItems");
 
   function updateSummary() {
   const summary = document.getElementById("cartSummary");
@@ -26,8 +30,13 @@
   `;
 }
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let box = document.getElementById("cartItems");
+function clearCart() {
+  if (confirm("Clear entire cart?")) {
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+}
 
 function renderCart() {
   updateSummary();
