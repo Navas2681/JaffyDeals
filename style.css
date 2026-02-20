@@ -1997,3 +1997,33 @@ body.no-scroll {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.footer-home-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.footer-home-btn:hover {
+  background: #333;
+}
+
+body {
+  padding-bottom: 80px;
+}
