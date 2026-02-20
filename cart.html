@@ -8,6 +8,9 @@
 <body>
 
 <h2 style="padding:20px;">Your Cart 🛒</h2>
+
+<button class="back-btn" onclick="history.back()">← Continue Shopping</button>
+
 <div id="cartItems"></div>
 
 <script>
@@ -18,9 +21,9 @@ function renderCart() {
   box.innerHTML = "";
 
   if (cart.length === 0) {
-    box.innerHTML = "<p style='padding:20px;'>Cart is empty 😅</p>";
-    return;
-  }
+  box.innerHTML = "<p style='padding:20px;'>Cart is empty 😅</p>";
+  return;
+}
 
   cart.forEach((p, i) => {
     box.innerHTML += `
@@ -49,7 +52,6 @@ function removeItem(i) {
 
 renderCart(); // initial render
 </script>
-
 
 </body>
 </html>
