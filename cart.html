@@ -9,17 +9,35 @@
 
 <h2 style="padding:20px;">Your Cart 🛒</h2>
 <button class="back-btn" onclick="history.back()">← Continue Shopping</button>
+<div id="cartSummary" class="cart-summary"></div>
 <div id="cartItems"></div>
 
 <script>
+
+  function updateSummary() {
+  const summary = document.getElementById("cartSummary");
+  let total = 0;
+
+  cart.forEach(p => total += Number(p.price));
+
+  summary.innerHTML = `
+    <p>🧾 Items: <b>${cart.length}</b></p>
+    <p>💰 Total: <b>₹${total}</b></p>
+  `;
+}
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let box = document.getElementById("cartItems");
 
 function renderCart() {
+  updateSummary();
   box.innerHTML = "";
 
   if (cart.length === 0) {
-    box.innerHTML = "<p style='padding:20px;'>Cart is empty 😅</p>";
+   box.innerHTML = `
+  <p style="padding:20px;font-size:18px;">Your cart is empty 😅</p>
+  <p style="padding:0 20px;color:#666;">Start adding deals and save money!</p>
+`;
     return;
   }
 
