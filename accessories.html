@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessories</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2>Vez Associates</h2>
+
+  <div class="search-box">
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="Search accessories..."
+      oninput="searchProduct()"
+    >
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cart-count">0</span>
+    </a>
+  </nav>
+</header>
+
+<h2 style="text-align:center; margin-top:20px;">Accessories</h2>
+
+<div id="products" class="products"></div>
+
+<script src="js/products.js"></script>
+
+</body>
+</html>

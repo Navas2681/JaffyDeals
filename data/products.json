@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Hawkins Pressure Cooker 5L",
+    "price": 1899,
+    "brand": "Hawkins",
+    "type": "product",
+    "image": "https://m.media-amazon.com/images/I/513vOaGoy0L._SL1000_.jpg"
+  },
+  {
+    "name": "",
+    "price": 999,
+    "image": "https://images.unsplash.com/photo-1584990347449-5c5a33f0b37e"
+  },
+  {
+    "name": "Hawkins Tawa",
+    "price": 799,
+    "image": "https://images.unsplash.com/photo-1590080877777-8b7b4c6f58f2"
+  },
+  {
+    "name": "Prestige Gasket",
+    "brand": "Prestige",
+    "type": "accessory"
+  }
+]
+

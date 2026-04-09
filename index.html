@@ -1,221 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G0ML3VPDPK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G0ML3VPDPK');
-</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" 
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>JaffyDeals - Best Daily Deals</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vez Associates</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div id="notifyBox" class="notify-box" style="display:none;">
-  <span id="notifyText">🔥 New deals available!</span>
-  <button onclick="closeNotify()">✖</button>
-</div>
+<header class="navbar">
+  <h2>Vez Associates</h2>
 
-<header>
-
-  <!-- Top Brand Bar -->
-<div class="top-brand-bar">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-  <!-- MENU OVERLAY -->
-<div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
-
-<!-- SIDE MENU -->
-<div id="mobileMenu" class="mobile-menu">
-
-  <button class="menu-close-btn" onclick="toggleMenu()">✖</button>
-
-  <!-- HEADER -->
-  <div class="menu-header">
-    <img id="userAvatar" src="default-avatar.png">
-    <p id="menuUserName">Hello, Guest</p>
+  <div class="search-box">
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="Search products..."
+      oninput="searchProduct()"
+    >
   </div>
 
-  <!-- SCROLL AREA -->
-  <div class="menu-body">
-    <a href="index.html">🏠 Home</a>
-    <a href="deals.html">🔥 Deals</a>
-    <a href="#coupons">🏷 Coupons</a>
-    <a href="#categories">📂 Categories</a>
-    <a href="cart.html">🛒 My Cart</a>
-    <a href="contact.html">📞 Contact</a>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="menu-footer">
-    <button id="authBtn" class="menu-auth-btn" onclick="handleAuth()">
-      Logout
-    </button>
-  </div>
-
-</div>
-
-  <div class="brand-name">JaffyDeals</div>
-
-  <div class="top-actions">
-    <img
-  id="topUserAvatar"
-  class="icon-btn profile-avatar"
-  src="icons/user.png"
-  alt="Profile"
-  onclick="openProfile()"
-/>
-
-    <div class="cart-icon" onclick="openCart()">
-  🛒 <span id="cartCount">0</span>
-</div>
-  </div>
-</div>
-
-<div class="header-scroll">
-
-  <button id="themeToggle" 
-  class="toggle-btn">🌙</button>
-  
-  <nav class="top-nav">
+  <nav>
     <a href="index.html">Home</a>
-    <a href="deals.html">Deals</a>
-    <a href="#">Coupons</a>
-    <a href="#">Categories</a>
-    <a href="contact.html">Contact</a>
+    <a href="products.html">Products</a>
+    <a href="accessories.html">Accessories</a>
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cart-count">0</span>
+    </a>
   </nav>
-
-  <div class="search-container">
-  <span class="search-icon">🔍</span>
-  <input id="searchInput" type="text" placeholder="Search for Products">
-</div>
-</div>
 </header>
 
-<!-- Banner Slider -->
-<div class="banner-slider">
-  <div class="slides">
-    <a href="https://myntr.clnk.in/zccH" class="slide">
-      <img src="assets/myntra beauty banner.jpg" alt="Myntra Beauty">
-    </a>
-    <a href="https://myntr.clnk.in/zchG" class="slide">
-      <img src="assets/myntra fashion banner.jpg" alt="Myntra Fashion">
-    </a>
-    <a href="https://myntr.clnk.in/zceS" class="slide">
-      <img src="assets/myntra kids banner.jpg" alt="Myntra Kids">
-    </a>
+<section class="hero">
+    <button style="margin-top:15px;">Explore Products</button>
+  <h1>Authorised Channel Partner</h1>
+  <p>Genuine Accessories & Premium cookware for your Dream kitchen </p>
+  <div class="brand-inline">
+  <span onclick="goBrand('Butterfly')">Butterfly</span>
+  <span onclick="goBrand('Preethi')">Preethi</span>
+  <span onclick="goBrand('Hawkins')">Hawkins</span>
+  <span onclick="goBrand('Prestige')">Prestige</span>
+</div>
+</section>
+
+<section id="products" class="products"></section>
+
+<script src="js/script.js"></script>
+
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<footer class="footer">
+  <h3>Vez Associates</h3>
+
+  <div class="footer-links">
+    <a href="mailto:vezassociate@gmail.com">📧 Email</a>
+    <a href="https://wa.me/917025844440" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/vez_associates?igsh=b3RmZmN4dmV4NDVy" target="_blank">📸 Instagram</a>
   </div>
 
-  <div id="welcomeBox" class="welcome-box" style="display:none;">
-  👋 Welcome back, <span id="welcomeName">Friend</span>!
-</div>
-
-
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</div>
-
-<div class="filters">
-  <button class="filter-btn active" data-filter="all">✨ All</button>
-  <button class="filter-btn" data-filter="electronics">🔌 Electronics</button>
-  <button class="filter-btn" data-filter="mobile">📱 Mobile</button>
-  <button class="filter-btn" data-filter="fashion">👗 Fashion</button>
-  <button class="filter-btn" data-filter="grocery">🛒 Grocery</button>
-  <button class="filter-btn" data-filter="beauty">💄 Beauty</button>
-  <button class="filter-btn" data-filter="healthpersonalcare">🩺 Health & PersonalCare</button>
-  <button class="filter-btn" data-filter="accessories">🎒 Accessories</button>
-  <button class="filter-btn" data-filter="toysgames">🧸 Toys & Games</button>
-  <button class="filter-btn" data-filter="books">📚 Books</button>
-  <button class="filter-btn" data-filter="sportsfitness">🏋️ Sports & Fitness</button>
-  <button class="filter-btn" data-filter="baby">👶 Baby</button>
-  <button class="filter-btn" data-filter="homekitchen">🏠 Home & Kitchen</button>
-</div>
-
-<div id="fashion-panel" class="fashion-panel" style="display:none;">
-
-  <!-- GENDER TABS -->
-  <div id="fashion-gender" class="filter-row gender-row"></div>
-
-  <!-- SUB CATEGORY -->
-  <div id="fashion-sub" class="filter-row sub-row"></div>
-
-  <!-- OCCASION -->
-  <div id="fashion-occasion" class="filter-row occasion-row"></div>
-
-  <!-- PRICE -->
-  <div id="fashion-price" class="filter-row price-row"></div>
-
-</div>
-
-<div id="subfilters" class="subfilters"></div>
-
-<div id="fashion-panel" style="display:none; padding:10px;">
-  <div id="fashion-gender"></div>
-  <div id="fashion-sub"></div>
-  <div id="fashion-occasion"></div>
-  <div id="fashion-price"></div>
-</div>
-
-<section class="deals-grid">
-    <!-- PRODUCTS WILL BE LOADED HERE FROM JSON -->
-    <div id="products"></div>
-    </section>
-
-<div class="pagination">
-    <button class="pg-prev">← Prev</button>
-    <div class="pg-pages"></div>
-    <button class="pg-next">Next →</button>
-</div>
-
-<footer class="site-footer">
-  
-  <p class="credit">© 2026 JaffyDeals — Created by <span class="name">Navas</span></p>
-
-  <p class="disclaimer">
-    JaffyDeals participates in affiliate marketing. We do not sell products directly. Product images & prices belong to respective stores.
-  </p>
-
-  <div class="social-links">
-    <a href="https://www.instagram.com/i__navas__?igsh=YjBmdTZnYTQ3N3Vz" target="_blank">Instagram</a>
-    <a href="mailto:navasn2681@gmail.com">Gmail</a>
-  </div>
-
+  <p>© 2022 Vez Associates. All rights reserved.</p>
 </footer>
-</footer>
-
-<!-- Image Viewer Overlay -->
-<div id="img-viewer" class="img-viewer">
-  <span class="close-btn">✖</span>
-  <img id="viewer-img" src="" alt="">
-</div>
-
-<script src="script.js"></script>
-<script type="module" src="firebase.js"></script>
-
-<!-- LOGIN MODAL -->
-<div class="login-modal" id="loginModal">
-  <div class="login-box">
-    <h3>Login / Register</h3>
-
-    <button class="google-btn" onclick="googleLogin()">
-  <img src="https://developers.google.com/identity/images/g-logo.png">
-  Continue with Google
-  </button>
-
-    <button class="close-btn" id="closeLogin">Close</button>
-  </div>
-</div>
 
 </body>
 </html>
+

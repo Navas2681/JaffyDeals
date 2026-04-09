@@ -1,86 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart</title>
-  <link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h2 style="padding:20px;">Your Cart 🛒</h2>
-<button class="back-btn" onclick="history.back()">← Continue Shopping</button>
-<div id="cartSummary" class="cart-summary"></div>
-<button onclick="clearCart()" class="clear-cart-btn">🗑 Clear Cart</button>
-<div id="cartItems"></div>
+<header class="navbar">
+  <h2>Cart</h2>
+  <a href="index.html">⬅ Back</a>
+</header>
 
-<script>
+<section class="cart-page">
+  <div id="cart-container"></div>
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let box = document.getElementById("cartItems");
+  <div class="summary">
+    <h3>Total Items: <span id="total-items">0</span></h3>
+    <h3>Total Price: ₹<span id="total-price">0</span></h3>
+    <button class="checkout">Proceed to Payment</button>
+  </div>
+</section>
 
-  function updateSummary() {
-  const summary = document.getElementById("cartSummary");
-  let total = 0;
-
-  cart.forEach(p => total += Number(p.price));
-
-  summary.innerHTML = `
-    <p>🧾 Items: <b>${cart.length}</b></p>
-    <p>💰 Total: <b>₹${total}</b></p>
-  `;
-}
-
-function clearCart() {
-  if (confirm("Clear entire cart?")) {
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-  }
-}
-
-function renderCart() {
-  updateSummary();
-  box.innerHTML = "";
-
-  if (cart.length === 0) {
-   box.innerHTML = `
-  <p style="padding:20px;font-size:18px;">Your cart is empty 😅</p>
-  <p style="padding:0 20px;color:#666;">Start adding deals and save money!</p>
-`;
-    return;
-  }
-
-  cart.forEach((p, i) => {
-    box.innerHTML += `
-      <div class="cart-card">
-        <img src="${p.image}" alt="${p.name}" class="cart-img">
-
-        <div class="cart-info">
-          <h3 class="cart-title">${p.name}</h3>
-          <p class="cart-price">₹${p.price}</p>
-
-          <div class="cart-actions">
-            <button class="remove-btn" onclick="removeItem(${i})">❌ Remove</button>
-            <a href="${p.link}" target="_blank" class="buy-btn">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-}
-
-function removeItem(i) {
-  cart.splice(i, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart(); // 🔥 THIS is the fix
-}
-
-renderCart(); // initial render
-</script>
-
-<footer class="cart-footer">
-  <a href="index.html" class="footer-home-btn">🏠 Go to Home</a>
-</footer>
-
+<script src="js/cart.js"></script>
 </body>
 </html>
+
